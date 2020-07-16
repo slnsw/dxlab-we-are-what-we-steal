@@ -3502,7 +3502,7 @@ let terms = {
         c: "things",
         s: "hat"
     },
-    "cabbage-tree hat": {
+    "cabbagetree hat": {
         rx: ["\bcabbage[-\s]?tree\b[\w\s-']*\bhat\b", "gi"],
         n: [33, 93, 124, 170, 145, 102, 130, 83, 56, 55, 46, 39, 28, 30, 13, 9, 16, 6, 3, 8, 5, 5, 5, 2, 8, 8, 7, 7, 9, 10, 9, 5, 4, 1, 1, 1, 0, 1, 2, 1, 0],
         c: "things",

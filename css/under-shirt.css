@@ -2133,11 +2133,9 @@ url(../img/icon-places.png),
 url(../img/icon-things.png),
 url(../img/icon-notes.png)}
 
-/* map is 920 */
-
 @media all and (max-width:1150px){
 
-    .note {
+    .set .note {
     display:none}
 
 }
