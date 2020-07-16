@@ -967,8 +967,6 @@ d3
         let $node = d3.select(this),
             term = $node.attr('data-term'),
             d = getData(term),
-            //NB = d.data['NB'],
-            //NBStr = (NB!=null)? `<div class="note">${termNotes[NB]}</div>` : '',
             str = `<div class="graph ${d.catStr}">
                 <svg>
                     <svg viewBox="0 0 500 125" preserveAspectRatio="none">
@@ -980,10 +978,9 @@ d3
                         <text y="-8">${d._maxYear}</text>
                     </svg>
                 </svg>
-                <h5 title="${addRegex(d.data['rx'])}">${term}</h5>
                 <p><a href="${getTroveURL(term)}">${d._total.toLocaleString()} mentions</a></p>
             </div>`
-        
+            $node.attr('title',addRegex(d.data['rx']))
             this.parentNode.innerHTML += str
 
     })

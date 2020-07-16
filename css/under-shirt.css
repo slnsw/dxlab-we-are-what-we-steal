@@ -546,7 +546,8 @@ margin:4px 0 0;
 font-weight:normal;
 letter-spacing:-0.025em}
 
-h5[title]{
+h5[title],
+q[title]{
 cursor:help}
 
 h5[data-title]{
