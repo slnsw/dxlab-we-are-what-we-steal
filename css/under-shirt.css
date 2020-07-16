@@ -536,19 +536,18 @@ line-height:inherit}
 
 .graph svg {
 height:40px;
-width:100%;
-/*border-bottom:1px solid var(--pink)*/}
+width:100%}
 
 .graph h5 {
 border-top:1px solid var(--dark);
-padding-top:3px;
+padding-top:4px;
 font-size:15px;
 margin:4px 0 0;
 font-weight:normal;
 letter-spacing:-0.025em}
 
 h5[title]{
-cursor:default}
+cursor:help}
 
 h5[data-title]{
 position:relative;
@@ -608,6 +607,9 @@ text-decoration:none}
 
 .inline {
 margin:2rem 0 1rem}
+
+p + .inline {
+margin-top:3rem}
 
 /* QUOTES */
 
@@ -736,6 +738,9 @@ font-size:.75rem}
 .details > p {
 margin:0 .25rem;
 text-align:center}
+
+.details p:first-child:after {
+content:'.'}
 
 .details a:before {
 content:'View on Trove'}

@@ -28,7 +28,6 @@ let words = [106226,287391,256133,339379,353081,414712,436334,381301,405443,4373
         //'Hyde Park': 'mention popularity of \'whilst drunk\' (32) \'whilst asleep\' (86) or \'drunk and asleep'' (101)',
         'masher hat' : '\'mashers\' was the term used for men who would harass young women',
         'obscene language': '\'using obscene language\' was a crime, hence its frequency',
-        //"Dr. Jim hat" : "",
         //"selector" : "Selectors were...",
         //"squatter" : "Squatters were...",
         'gray/grey':  'The gazette switched from using \'grey\' to \'gray\' in mid November 1869',
@@ -51,12 +50,6 @@ let words = [106226,287391,256133,339379,353081,414712,436334,381301,405443,4373
     //FIX!
     isTouch = ('ontouchstart' in document.documentElement || 'ontouchstart' in window)
 
-/*
-if (history.scrollRestoration){
-    history.scrollRestoration = 'manual'
-}
-*/
-
 function roundTo(n,places){
     let p = Math.pow(10,places)
     return Math.round(n*p)/p
@@ -70,12 +63,6 @@ function addRegex(rx){
     let rx1 = rx[0].replace(/\x08/g,'\\b');
     return `regex used: /${rx1}/${rx[1]}`
 }
-
-/*
-d3
-    .selectAll('.total-words')
-    .html(totalWords.toLocaleString())
-*/
 
 if (isTouch){
     $body.on('click', hideInfo) 
@@ -320,7 +307,6 @@ let $selectiveReporting = d3.select('#selective-reporting-years'),
 	"V": "y",
     "bail": true
 },{
-    // later upgraded to murder
 	"desc": "Turner, an Aboriginal, charged with the manslaughter of Frederick Towney, at Goorah, has been arrested by Constable McGarry, Moree Police",
 	"url": "https://trove.nla.gov.au/newspaper/article/252089308?searchTerm=Turner",
 	"date": "1876-09-27",
@@ -329,7 +315,6 @@ let $selectiveReporting = d3.select('#selective-reporting-years'),
 	"V": "n",
     "NB": "later upgraded to murder"
 },{
-    // shot by police, police got a commendation: https://trove.nla.gov.au/newspaper/article/251895637/27940048?searchTerm=bald%20nobs
 	"desc": "Yarrow Creek Tommy, alias Tommy McPherson (an aboriginal)... shot by police near Glen Innes",
 	"url": "https://trove.nla.gov.au/newspaper/article/251895610?searchTerm=Tommy",
 	"date": "1879-12-31",
@@ -338,11 +323,6 @@ let $selectiveReporting = d3.select('#selective-reporting-years'),
 	"V": "y",
     "NB": "shot by police"
 },{
-    // shot by police. INQUIRY!!!!!!!!!!!!!!!!!!!!!
-    /*
-    magistrate: "I direct that an information for manslaughter be filed against the said Constable Clancy"
-    inquiry found no issue and released with commendation...
-    */
 	"desc": "Dickey Murry, an aboriginal, was murdered at Pinegobla Station, by another aboriginal named Tommy, who, on the 6th instant, was shot dead by Constable Clancy, Mogil Mogil Police",
 	"url": "https://trove.nla.gov.au/newspaper/article/252052975",
 	"date": "1882-07-26",
@@ -706,7 +686,6 @@ function showSet(set, category){
             .domain([maxRateForSet,0])
             .range([0, 100])
 
-    // limit?
     //for (let i=0;i<setArr.length;i++){
     for (let i=0;i<12;i++){
 
@@ -714,7 +693,6 @@ function showSet(set, category){
             name = term['name'],
             nameClean = name.replace(/\(e?s\)/g,'').trim(),
             d = getData(name, maxRateForSet),
-            //NB = term['NB'],
             total = d._total.toLocaleString(),
             yPos = relYScale(d._max),
             avgRate = d._avgRatesPer100k,
@@ -867,7 +845,6 @@ function getData(term, altMaxRate){
         //pathStrLine = createLine(ratesPer100k, _max, 500, 125),
         pathStrAbs = createLine(ratesPer100k, absMaxRate, 500, 125),
         pathStrAlt = '',
-        //add
         xPos = xScale(_maxIndex),
         _avgRatesPer100k = roundTo(d3.sum(ratesPer100k)/numYears,1),
         obj = {}
@@ -875,13 +852,7 @@ function getData(term, altMaxRate){
         //if (data['*']!=null){
         if (rx[1]=='gi' ||  /[\[\?\|]/.test(rx[0])){
             flagStr = 'flag'
-        }
-
-        /*
-        if (altMaxRate!=null){
-            pathStrAlt = createPath(ratesPer100k, altMaxRate, 500, 125) 
-        }
-        */     
+        } 
 
         obj = {
             'data': data,
@@ -897,7 +868,6 @@ function getData(term, altMaxRate){
             'pathStrAlt': pathStrAlt,
             'xPos': xPos,
             '_avgRatesPer100k': _avgRatesPer100k,
-            //REMOVE LATER, IS JUST FOR TESTING!!!!!!!!!!!!!!!!!!
             'ratesPer100k': ratesPer100k,
             'flag': flagStr
         }
@@ -997,8 +967,8 @@ d3
         let $node = d3.select(this),
             term = $node.attr('data-term'),
             d = getData(term),
-            NB = d.data['NB'],
-            NBStr = (NB!=null)? `<div class="note">${termNotes[NB]}</div>` : '',
+            //NB = d.data['NB'],
+            //NBStr = (NB!=null)? `<div class="note">${termNotes[NB]}</div>` : '',
             str = `<div class="graph ${d.catStr}">
                 <svg>
                     <svg viewBox="0 0 500 125" preserveAspectRatio="none">
@@ -1012,7 +982,6 @@ d3
                 </svg>
                 <h5 title="${addRegex(d.data['rx'])}">${term}</h5>
                 <p><a href="${getTroveURL(term)}">${d._total.toLocaleString()} mentions</a></p>
-                ${NBStr}
             </div>`
         
             this.parentNode.innerHTML += str
@@ -1171,8 +1140,8 @@ for (let i=0;i<numYears;i++){
 places.forEach(function(a,i){
 
     let mentions = a[1]
-        // THIS IS TERRIBLE! FIX
-        //trimmed = mentions.slice(0, numYears)
+    // THIS IS TERRIBLE! FIX
+    //trimmed = mentions.slice(0, numYears)
        
     // CHECK EACH YEAR TO SEE MENTIONS
     mentions.forEach(function(b,j){
@@ -1240,7 +1209,7 @@ function zoomed(){
         $zoomable.attr("transform", d3.event.transform);
       
         // only if k changed
-        //console.log(k);
+        // console.log(k);
 
         if (/*Number.isInteger(k) && */k!=currentScale /*&& k>1*/){
             rescaleTowns(k)
@@ -1266,7 +1235,6 @@ let mapWidth = 700,
         .attr('height', mapHeight),
     zoom = d3.zoom().on("zoom", zoomed),
     currentScale = 1,
-    //$zoomable = $theMap.call(zoom).append('g'),
     $zoomable = $theMap.append('g'),
     $townsLayer = $zoomable
         .append('g')
@@ -1283,9 +1251,6 @@ let mapWidth = 700,
 
 
 //not ipad, fix this!
-//https://github.com/d3/d3-zoom
-//https://observablehq.com/@d3/drag-zoom 
-
 //if (w < 768){
 if (window.innerWidth <= 760){
     $theMap.call(zoom)
@@ -1479,8 +1444,6 @@ function showTown(name){
         $label = $selectTowns.select('.label'),
         $max = $selectTowns.select('.max')
 
-        //$yourTown.attr('class',d.flag)
-
         $label
             .html(`<a href="${getTroveURL(name)}" target="_blank">${d._total.toLocaleString()} mentions</a>
                     <span>Avg. rate: ${d._avgRatesPer100k}/100K</span>`)
@@ -1565,15 +1528,6 @@ d3
         $townCount.html(uniqueMentionedByYear[yearIndex]);
         $thisYearMarker.attr('transform',`translate(${(chunk * yearIndex)-0} 0)`)
         updateTowns(yearIndex)
-        /*
-        $towns.each(function(){
-
-            let $node = d3.select(this),
-                i = $node.attr('data-i')*1;
-
-            $node.attr('style',setStyle(i,yearIndex))
-        });
-        */
  
     });
 
