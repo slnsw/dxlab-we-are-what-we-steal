@@ -2361,6 +2361,10 @@ url(../img/icon-notes.png)}
     .quote blockquote {
     line-height:1.1}
 
+    .quote .details {
+    margin-top:-1.5rem;
+    display:flex}
+
     blockquote svg {
     display:inline-block}
 
@@ -2375,7 +2379,8 @@ url(../img/icon-notes.png)}
     width:auto;
     margin:1rem 0}
 
-    .graph-lrg  {
+    .graph-lrg,
+    .sources  {
     max-width:var(--max)!important}
 
     .graph-lrg p {
@@ -2492,18 +2497,7 @@ url(../img/icon-notes.png)}
     position:relative;
     left:auto;
     top:auto;
-    margin:.33rem 0 .5rem;
-    display:flex;
-    justify-content:flex-start}
-
-    .photos .details p {
-    margin:0}
-
-    .photos .details p:first-child:after {
-    content:'.'}
-
-    .photos .details a {
-    margin-left:.5rem}
+    margin:.33rem 0 1rem}
 
     .photos span[data-term],
     .photos [data-term] h5:before {
@@ -2687,6 +2681,20 @@ url(../img/icon-notes.png)}
 
     .photos img {
     border-radius:0}
+
+    .photos .details {
+    margin:.33rem 0 .5rem;
+    display:flex;
+    justify-content:flex-start}
+
+    .photos .details p {
+    margin:0}
+
+    .photos .details p:first-child:after {
+    content:'.'}
+
+    .photos .details a {
+    margin-left:.5rem}
 
     #word-count svg.outer {
     margin-top:8rem;
