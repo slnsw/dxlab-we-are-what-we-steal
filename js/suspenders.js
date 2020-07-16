@@ -1087,7 +1087,7 @@ function showGender(opt){
 
     $genderMaxM
         .select('.opt')
-        .html(`of '${termM}' (${percentMax}%)</text>`)
+        .html(`'${termM}' (${percentMax}%)</text>`)
 
     $genderMaxF
         .select('text')
@@ -1095,7 +1095,7 @@ function showGender(opt){
 
     $genderMaxF
         .select('.opt')
-        .html(`of '${termF}' (${100 - percentMin}%)</text>`)
+        .html(`'${termF}' (${100 - percentMin}%)</text>`)
 
 
 }

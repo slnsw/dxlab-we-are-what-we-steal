@@ -1,7 +1,6 @@
 :root {
     --dark: #1D1D1d;
     --bg:#FAF7F0;
-
     --pink: #F9ADE0;
     --pink66: #FAC8E2;
     --pink50: #FBD5E2;
@@ -10,16 +9,13 @@
     --green:#9DF6D9;
     --blue: #C5D2EB;
     --blueDark:#3065CE;
-
     --grey: #8D8D82;
     --greyLight: #ccc;
     --greyAlt: #999;
     --purple: #D8D0DD;
     --purpleDark: #7D6580;
-
     --red: #E91731; 
     --brown: #CCC5A8;
-
     --block-mid:620px; 
     --cols:800px;
     --graph:800px;   
@@ -2356,6 +2352,7 @@ url(../img/icon-notes.png)}
     .drop,
     #selective-reporting .key,
     #selective-reporting .wrapper,
+    #selective-reporting h3 +p,
     #population-breakdown:before,
     .results:after {
     display:none}  
@@ -2384,6 +2381,9 @@ url(../img/icon-notes.png)}
     max-width:none;
     width:auto;
     margin:1rem 0}
+
+    .three > div {
+    margin-bottom:2rem}
 
     .graph-lrg,
     .sources  {
@@ -2509,6 +2509,13 @@ url(../img/icon-notes.png)}
     .photos [data-term] h5:before {
     display:inline}
 
+    .photos span[data-term='high cheek bones']{
+    transform: translate(-125%,-50%)}
+    .photos span[data-term='sharp nose']{
+    transform: translate(-150%,-50%)}
+    .photos span[data-term='bushy beard']{
+    transform: translate(0%,-50%)}
+
     .photos div[data-term],
     .photos div.lhs[data-term] {
     position:relative;
@@ -2592,6 +2599,14 @@ url(../img/icon-notes.png)}
     body {
     overflow-x:hidden}
 
+    [x="0%"] text {
+    text-anchor:start;
+    transform:translate(-4px)}
+
+    [x="100%"] text {
+    text-anchor:end;
+    transform:translate(4px)}
+
     .drop-2 {
     display:none}
 
@@ -2607,7 +2622,8 @@ url(../img/icon-notes.png)}
     max-width:none;
     padding:1.5rem}
 
-    .graph-lrg svg.outer {
+    .graph-lrg svg.outer,
+    #compare svg.outer {
     height:100px}
 
     #slider {
@@ -2707,7 +2723,7 @@ url(../img/icon-notes.png)}
     height:70px}
 
     .sections {
-    justify-content:space-between}
+    }
 
     .sections a:before {
     transform:translate(-50%,-70%)!important}
@@ -2748,7 +2764,10 @@ url(../img/icon-notes.png)}
     
     .by-quote li {
     width:100%;
-    margin:0 0 2rem}
+    margin:0 0 1rem}
+
+    .by-quote li q {
+    margin-bottom:1.75rem}
 
     .results li > svg {
     width:160px}

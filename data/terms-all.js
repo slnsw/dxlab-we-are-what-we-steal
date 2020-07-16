@@ -1662,8 +1662,8 @@ let terms = {
         s: "object"
     },
     "cast in eye": {
-        rx: ["\bcast in (one|his|her|left|right|both)? eyes?\b", "g"],
-        n: [2, 2, 7, 2, 7, 3, 5, 3, 4, 2, 4, 4, 6, 7, 3, 4, 5, 5, 5, 8, 5, 10, 8, 7, 8, 7, 6, 6, 8, 2, 7, 4, 6, 5, 3, 3, 2, 9, 2, 4, 8],
+        rx: ["\\bcast in (one|his|her|left|right|both)?\\s?eyes?\\b", "g"],
+        n: [2,2,7,3,8,3,5,3,4,2,4,4,6,7,4,4,5,5,5,8,5,10,8,7,9,8,8,6,8,2,7,4,6,5,3,3,2,9,2,5,8],
         c: "people",
         NB: "cast"
     },
