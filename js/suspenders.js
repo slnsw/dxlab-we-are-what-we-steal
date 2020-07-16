@@ -1482,7 +1482,7 @@ function showTown(name){
         //$yourTown.attr('class',d.flag)
 
         $label
-            .html(`<a href="${getTroveURL(name)}">${d._total.toLocaleString()} mentions</a>
+            .html(`<a href="${getTroveURL(name)}" target="_blank">${d._total.toLocaleString()} mentions</a>
                     <span>Avg. rate: ${d._avgRatesPer100k}/100K</span>`)
 
                 $selectTowns
