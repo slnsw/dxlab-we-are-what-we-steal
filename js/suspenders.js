@@ -629,7 +629,7 @@ function showSet(set, category){
         noteStr = (notes!=null)? notes : '';
 
     $target.attr('data-type',set)
-    console.warn('set : '+set)
+    //console.warn('set : '+set)
 
     $setNotes.html(noteStr)
 
@@ -680,8 +680,6 @@ function showSet(set, category){
     }
 
     // CONVERT COUNTS TO RATES ETC AND GET MAX
-    // console.log(setArr);
-    // console.log(JSON.stringify(setArr))
 
     setArr.forEach(function(term, i){
 
@@ -698,14 +696,10 @@ function showSet(set, category){
     });
 
     // SORT DESCENDING!
-    //console.log(setArr)
 
     setArr.sort(function(a, b){
-        //return b['_total'] - a['_total']
         return b['_avgRatesPer100k'] - a['_avgRatesPer100k']
     });
-
-  console.warn('check for honourable mentions!')
 
    let relYScale = d3
             .scaleLinear()
@@ -731,9 +725,6 @@ function showSet(set, category){
             NBStr = (NB!=null)? NB : '',
             nameDisplay = nameClean;
 
-            //console.log(name, NB)
-
-            //
             if (set=='mt'){
                 nameDisplay = nameDisplay.replace('Mount','Mt.')
             }
@@ -860,8 +851,6 @@ d3
 
 function getData(term, altMaxRate){
 
-    // console.log(term)
-
     let data = terms[term],
         counts = data['n'],
         catStr = data['c'],
@@ -920,7 +909,6 @@ function getData(term, altMaxRate){
 // ADD
 d3
     .selectAll('.blockquote-wrapper')
-    //.data(['a','b','c'])
     .each(function(){
 
         let $wrapper = d3.select(this),
@@ -928,9 +916,7 @@ d3
             
         $wrapper
             .selectAll('[data-term]')
-            .each(function(){
-
-            //console.log(d3.select(this).text(), terms[d3.select(this).text()])    
+            .each(function(){ 
 
             let $node = d3.select(this),
                 term = $node.attr('data-term'),
@@ -971,8 +957,6 @@ d3
     .selectAll('.photos div[data-term]')
     .each(function(a,i){
 
-        console.log(d3.select(this).attr('data-term'))
-
         let $node = d3.select(this),
             $dots = d3.select(this.parentNode).select('.dots'),
             term = $node.attr('data-term'),
@@ -1009,8 +993,6 @@ d3
  d3
     .selectAll('.by-quote [data-term]')
     .each(function(){
-
-        //console.log(d3.select(this).attr('data-term')) 
 
         let $node = d3.select(this),
             term = $node.attr('data-term'),
@@ -1084,8 +1066,6 @@ let $gender = d3.select('#gender'),
 
 function showGender(opt){
 
-    //console.log(opt)
-
     let genderBreakdown = [],
         termF = genderOpts[opt][0],
         termM = genderOpts[opt][1],
@@ -1108,8 +1088,6 @@ function showGender(opt){
     percentMin = Math.round(genderMinVals[0]*100),
     avgM = Math.round(d3.mean(genderBreakdown)*100),
     avgF = 100 - avgM
-
-   //console.log(avgM, avgF) 
 
     $gender
         .select('li:first-child')
@@ -1159,7 +1137,6 @@ function showGender(opt){
 d3
   .select('#gender select')  
   .on('change', function(){
-        //console.log(this.value)
         showGender(this.value)
     })
 
@@ -1207,18 +1184,6 @@ places.forEach(function(a,i){
     })
 })
 
-//maxTowns = d3.max(uniqueMentionedByYear)
-//maxTownsIndex = d3.maxIndex(uniqueMentionedByYear)
-
-/*
-uniqueMentionedByYear.forEach(function(a,i){
-    if (a>maxTowns){
-        maxTowns=a;
-        maxTownsIndex=i
-    }
-});
-*/
-
 maxTowns = maxMaxIndex(uniqueMentionedByYear)
 
 $townCount.html(uniqueMentionedByYear[0])
@@ -1243,8 +1208,6 @@ function rescaleTowns(k){
         let $node = d3.select(this),
             currentTransforms = $node.attr('transform'),
             newTransforms = currentTransforms.replace(/scale\([\d.]+\)/g,'').trim()
-
-        //console.log(this.style.fontSize)
 
         $node.attr('transform',`${newTransforms} scale(${1/k})`)
 
@@ -1651,7 +1614,6 @@ d3
 
 
 // PAGE SPECIFIC, SWITCH!
-// console.warn(pageId)
 
 // HOME
 if (pageId=='intro'){ 
@@ -1772,16 +1734,3 @@ if (pageId=='intro'){
     setDropdown($dropdownB,'tobacco')
 
 }
-
-
-// PEOPLE
-//else if (pageId=='people'){}
-
-// PLACES
-//else if (pageId=='places'){}
-
-// THINGS
-//else if (pageId=='things'){}
-
-// NOTES
-//else if (pageId=='notes'){}
