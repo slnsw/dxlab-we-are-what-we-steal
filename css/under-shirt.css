@@ -1,6 +1,5 @@
 :root {
     --dark: #1D1D1d;
-    /*--yellow: #FDFEE5;*/
     --bg:#FAF7F0;
 
     --pink: #F9ADE0;
@@ -10,7 +9,6 @@
     --pinkDark: #E77495;
     --green:#9DF6D9;
     --blue: #C5D2EB;
-    /*--blueDark: #485C84;*/
     --blueDark:#3065CE;
 
     --grey: #8D8D82;
@@ -19,7 +17,6 @@
     --purple: #D8D0DD;
     --purpleDark: #7D6580;
 
-    /*--red: #D14870;*/
     --red: #E91731; 
     --brown: #CCC5A8;
 
@@ -1966,6 +1963,14 @@ width:auto}
 footer .logos img[alt="DX LAB"]{
 height:30px}
 
+footer .req {
+margin-bottom:3rem;
+font-size:12px;
+letter-spacing:normal}
+
+footer .req a {
+display:inline-block;
+margin:0 .25rem}
 
 /* HOME */
 
