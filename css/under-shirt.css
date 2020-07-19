@@ -1349,7 +1349,8 @@ margin:6rem auto 0}
 
 #selective-reporting .outer {
 margin:0;
-height:15px}
+height:15px;
+mix-blend-mode:normal;}
 
 #selective-reporting .key {
 max-width:280px;
@@ -1358,7 +1359,8 @@ white-space:nowrap}
 
 #selective-reporting .key li {
 display:block;
-text-align:left}
+text-align:left;
+margin:0}
 
 #selective-reporting .key li:before,
 #info.IND h3:before {
@@ -2358,12 +2360,13 @@ url(../img/icon-notes.png)}
 
     .solo,
     .drop,
-    #selective-reporting .key,
-    #selective-reporting .wrapper,
-    #selective-reporting h3 +p,
     #population-breakdown:before,
-    .results:after {
+    .results:after,
+    .gov {
     display:none}  
+
+    #selective-reporting .wrapper {
+    width:100%}
 
     .quote {
     max-width:620px;
@@ -2623,6 +2626,9 @@ url(../img/icon-notes.png)}
     header {
     margin:6rem 0}
 
+    #selective-reporting .wrapper {
+    padding:0}
+
     #things header h1 {
     transform: rotate(-0.5deg) translate(0,.25rem)}
 
@@ -2760,6 +2766,9 @@ url(../img/icon-notes.png)}
 
 @media all and (max-width:400px){
 
+    #population-breakdown {
+    display:none}
+
     nav a {
     margin:.33rem}
     
@@ -2778,6 +2787,12 @@ url(../img/icon-notes.png)}
 
     .by-quote.pic li {
     margin:2rem .5rem}
+
+    #selective-reporting .key {
+    max-width:none}
+
+    .decades h4 {
+    font-size:1rem}
 
 }
 
