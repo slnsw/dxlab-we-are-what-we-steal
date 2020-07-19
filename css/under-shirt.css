@@ -1005,11 +1005,17 @@ position:relative}
 .by-quote:not(.pic):after {
 content:'***';
 position:absolute;
+left:0;
+right:0;
+text-align:center;
 font-size:1rem;
-margin:1rem 0}
+margin:0}
 
 .by-quote:not(.pic):before {
-top:-3rem}
+top:-2rem}
+
+.by-quote:not(.pic):after {
+bottom:-1.5rem}
 
 .by-quote .graph > svg {
 margin-bottom:5px}
@@ -2775,6 +2781,9 @@ url(../img/icon-notes.png)}
     .by-quote li {
     width:100%;
     margin:0 0 1rem}
+
+    .by-quote:not(.pic):after {
+    bottom:-2.5rem}
 
     .by-quote li q {
     margin-bottom:1.75rem}

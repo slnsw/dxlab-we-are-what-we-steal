@@ -132,6 +132,7 @@ function minMinIndex(arr) {
 
 
 var $selectiveReporting = d3.select('#selective-reporting-years'),
+    $selectiveReportingWrapper = d3.select('#selective-reporting .ie-sad-face'),
     $reportedMurders = d3.select('#reported-murders'),
     $reportedMurdersIND = $reportedMurders.select('.IND'),
     $reportedMurdersNonIND = $reportedMurders.select('.non-IND'),
@@ -382,38 +383,38 @@ var _loop = function _loop(i) {
 
     if (thisYear == year) {
       var classStr = '',
-          a = report['S'],
-          b = report['V'],
-          url = report['url'],
-          tmpStr = ""; // INDIGENOUS MURDERER(s), Non-INDIGENOUS VICTIM
+   a = report['S'],
+   b = report['V'],
+   url = report['url'],
+   tmpStr = ""; // INDIGENOUS MURDERER(s), Non-INDIGENOUS VICTIM
 
       if (a.charAt(0) == 'y' && b.charAt(0) == 'n') {
-        classStr = 'IND';
-        _murdersCount[0]++;
+ classStr = 'IND';
+ _murdersCount[0]++;
       } // NON-INDIGENOUS MURDERER(s), INDIGENOUS VICTIM(s)
       else if (a.charAt(0) == 'n' && b.charAt(0) == 'y') {
-          if (url.indexOf('guardian') > 0) {
-            classStr = 'known';
-          } else {
-            classStr = 'non-IND';
+   if (url.indexOf('guardian') > 0) {
+     classStr = 'known';
+   } else {
+     classStr = 'non-IND';
 
-            if (report['NB'] == 'shot by police') {
-              classStr += ' shot';
-            } else {
-              _murdersCount[1]++;
-            }
-          }
-        }
+     if (report['NB'] == 'shot by police') {
+       classStr += ' shot';
+     } else {
+       _murdersCount[1]++;
+     }
+   }
+ }
 
       if (classStr != '') {
-        tmpStr = "<circle r=\"".concat(dotW / 2, "\" cx=\"0\" cy=\"-").concat(dotW * yearCount, "\" class=\"").concat(classStr, "\" data-index=\"").concat(j, "\"/>");
+ tmpStr = "<circle r=\"".concat(dotW / 2, "\" cx=\"0\" cy=\"-").concat(dotW * yearCount, "\" class=\"").concat(classStr, "\" data-index=\"").concat(j, "\"/>");
 
-        if (!isTouch) {
-          tmpStr = "<a href=\"".concat(url, "\">").concat(tmpStr, "</a>");
-        }
+ if (!isTouch) {
+   tmpStr = "<a href=\"".concat(url, "\">").concat(tmpStr, "</a>");
+ }
 
-        murdersStr += tmpStr;
-        yearCount++;
+ murdersStr += tmpStr;
+ yearCount++;
       }
     }
   });
@@ -425,7 +426,10 @@ for (var i = 0; i < numYears; i++) {
 } // CHECK THESE!!!
 
 
-$selectiveReporting.html(murdersStr);
+// IE11
+$selectiveReportingWrapper.html('<svg class="outer" viewBox="0 0 600 15" preserveAspectRatio="xMinYMin"><line class="base" x1="-100" y1="100%" x2="100%" y2="100%" transform="translate(50, 0)" /><g class="years" transform="translate(0, 0)"><line x1="0" y1="-60" x2="0" y2="100%" /><line x1="25%" y1="-60" x2="25%" y2="100%" /><line x1="50%" y1="-60" x2="50%" y2="100%" /><line x1="75%" y1="-60" x2="75%" y2="100%" /><line x1="100%" y1="-60" x2="100%" y2="100%" /></g><g id="selective-reporting-years" transform="translate(7, 7)">'+murdersStr+'</g><g class="arrow" transform="translate(300, 80)"><line x1="0" y1="-65" x2="0" y2="10" /><polyline points="-10,0 0,10 10,0" /></g><svg x="100%" y="100%" class="gov"><g transform="translate(7.5, -90)"><text x="0" y="-35" class="year">(1900)</text><text x="0" y="-22">Governor Brothers</text><text x="0" y="-10" class="t"><a href="https://www.sl.nsw.gov.au/stories/bushrangers-new-south-wales/governor-brothers">Read more</a></text><line x1="0" y1="0" x2="0" y2="30"></g></svg></svg>');
+//$selectiveReporting.append(murdersStr);
+
 var INDmurders = _murdersCount[0],
     nonINDmurders = _murdersCount[1],
     INDmurdersPercent = Math.round(INDmurders / (INDmurders + nonINDmurders) * 100),
@@ -436,7 +440,7 @@ $reportedMurders.select('.IND span').html("".concat(INDmurders, " incidents"));
 $reportedMurders.select('.IND b').html("".concat(INDmurdersPercent, "%"));
 $reportedMurders.select('.non-IND span').html("".concat(nonINDmurders, " incidents"));
 $reportedMurders.select('.non-IND b').html("".concat(nonINDmurdersPercent, "%"));
-$selectiveReporting.selectAll('circle').on(isTouch ? 'click' : 'mousemove', function () {
+$selectiveReportingWrapper.selectAll('circle').on(isTouch ? 'click' : 'mousemove', function () {
   var $node = d3.select(this),
       e = d3.event,
       xPos = e.pageX,
@@ -446,7 +450,7 @@ $selectiveReporting.selectAll('circle').on(isTouch ? 'click' : 'mousemove', func
       date = d['actual'].split('-'),
       url = d['url'],
       str = '';
-  str = "<h3>".concat(mths[date[1] - 1], ", ").concat(date[0], "</h3>\n        <div>\n            <p>\u201C").concat(d.desc, "\u201D</p>\n            <p><a href=\"").concat(url, "\" target=\"_blank\">click to view on</a></p>\n        </div>");
+  str = "<h3>".concat(mths[date[1] - 1], ", ").concat(date[0], "</h3>\n <div>\n     <p>\u201C").concat(d.desc, "\u201D</p>\n     <p><a href=\"").concat(url, "\" target=\"_blank\">click to view on</a></p>\n </div>");
   $info.attr('class', $node.attr('class')).attr("style", "left:".concat(xPos, "px;top:").concat(yPos, "px;display:block")).html(str);
   d3.event.stopPropagation();
 }).on("mouseout", function () {
@@ -487,25 +491,25 @@ function showSet(set, category) {
 
   if (set == 'towns' && category == 'places') {
     var l = topTowns.length,
-        l1 = places.length;
+ l1 = places.length;
 
     for (var _i = 0; _i < l; _i++) {
       var name = topTowns[_i];
 
       for (var j = 0; j < l1; j++) {
-        var thisPlace = places[j],
-            tmpObj = {};
+ var thisPlace = places[j],
+     tmpObj = {};
 
-        if (thisPlace[0] == name) {
-          tmpObj = {
-            'name': name,
-            'n': thisPlace[1],
-            'rx': ['', '']
-          };
-          setArr.push(tmpObj);
-          terms[name] = tmpObj;
-          break;
-        }
+ if (thisPlace[0] == name) {
+   tmpObj = {
+     'name': name,
+     'n': thisPlace[1],
+     'rx': ['', '']
+   };
+   setArr.push(tmpObj);
+   terms[name] = tmpObj;
+   break;
+ }
       }
     }
 
@@ -515,8 +519,8 @@ function showSet(set, category) {
       var thisTerm = terms[t];
 
       if (thisTerm['s'] == set) {
-        thisTerm['name'] = t;
-        setArr.push(thisTerm);
+ thisTerm['name'] = t;
+ setArr.push(thisTerm);
       }
     }
   } // CONVERT COUNTS TO RATES ETC AND GET MAX
@@ -525,9 +529,9 @@ function showSet(set, category) {
   setArr.forEach(function (term, i) {
     var //name = term['name'],
     counts = term['n'],
-        ratesPer100k = getRatesPerYear(counts),
-        maxVals = maxMaxIndex(ratesPer100k),
-        _avgRatesPer100k = roundTo(d3.sum(ratesPer100k) / numYears, 1);
+ ratesPer100k = getRatesPerYear(counts),
+ maxVals = maxMaxIndex(ratesPer100k),
+ _avgRatesPer100k = roundTo(d3.sum(ratesPer100k) / numYears, 1);
 
     maxRateForSet = Math.max(maxRateForSet, maxVals[0]);
     maxAvgRateForSet = Math.max(maxAvgRateForSet, _avgRatesPer100k);
@@ -541,18 +545,18 @@ function showSet(set, category) {
 
   for (var _i2 = 0; _i2 < 12; _i2++) {
     var term = setArr[_i2],
-        _name = term['name'],
-        nameClean = _name.replace(/\(e?s\)/g, '').trim(),
-        d = getData(_name, maxRateForSet),
-        total = d._total.toLocaleString(),
-        yPos = relYScale(d._max),
-        avgRate = d._avgRatesPer100k,
-        opacity = .8 * avgRate / maxAvgRateForSet + .2,
-        bgStr = "rgba(".concat(rgbStr[category], ", ").concat(opacity, ")"),
-        url = getTroveURL(_name),
-        NB = termNotes[_name],
-        NBStr = NB != null ? NB : '',
-        nameDisplay = nameClean;
+ _name = term['name'],
+ nameClean = _name.replace(/\(e?s\)/g, '').trim(),
+ d = getData(_name, maxRateForSet),
+ total = d._total.toLocaleString(),
+ yPos = relYScale(d._max),
+ avgRate = d._avgRatesPer100k,
+ opacity = .8 * avgRate / maxAvgRateForSet + .2,
+ bgStr = "rgba(".concat(rgbStr[category], ", ").concat(opacity, ")"),
+ url = getTroveURL(_name),
+ NB = termNotes[_name],
+ NBStr = NB != null ? NB : '',
+ nameDisplay = nameClean;
 
     if (set == 'mt') {
       nameDisplay = nameDisplay.replace('Mount', 'Mt.');
@@ -567,11 +571,11 @@ function showSet(set, category) {
     }
 
     if (firstTime) {
-      str += "<li class=\"".concat(d.flag, "\">\n                        <div class=\"label\" style=\"background:").concat(bgStr, "\">\n                            <h5 title=\"").concat(addRegex(d.data['rx']), "\" data-term=\"").concat(nameClean, "\">").concat(nameDisplay, "</h5>\n                            <p><a href=\"").concat(url, "\">").concat(total, " mentions</a></p>\n                        </div>\n                        <svg>\n                            <g class=\"years\" transform=\"translate(0, 0)\">\n                                <line x1=\"25%\" y1=\"-8\" x2=\"25%\" y2=\"100%\"></line>\n                                <line x1=\"50%\" y1=\"-8\" x2=\"50%\" y2=\"100%\"></line>\n                                <line x1=\"75%\" y1=\"-8\" x2=\"75%\" y2=\"100%\"></line>\n                            </g>\n                            <svg class=\"paths\" viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">\n                                <path d=\"").concat(d.pathStr, "\" />\n                                <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />\n                            </svg>\n                            <svg class=\"max\" x=\"").concat(d.xPos, "%\" y=\"").concat(yPos, "%\">\n                                <circle r=\"2.5\" cx=\"0\" cy=\"0\" />\n                                <text y=\"-7\">").concat(d._maxYear, "</text>\n                            </svg>\n                            <div class=\"note\">").concat(NBStr, "</div>\n                        </svg>\n                    </li>");
+      str += "<li class=\"".concat(d.flag, "\"> <div class=\"label\" style=\"background:").concat(bgStr, "\">     <h5 title=\"").concat(addRegex(d.data['rx']), "\" data-term=\"").concat(nameClean, "\">").concat(nameDisplay, "</h5>     <p><a href=\"").concat(url, "\">").concat(total, " mentions</a></p> </div> <svg>     <g class=\"years\" transform=\"translate(0, 0)\">  <line x1=\"25%\" y1=\"-8\" x2=\"25%\" y2=\"100%\"></line>  <line x1=\"50%\" y1=\"-8\" x2=\"50%\" y2=\"100%\"></line>  <line x1=\"75%\" y1=\"-8\" x2=\"75%\" y2=\"100%\"></line>     </g>     <svg class=\"paths\" viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">  <path d=\"").concat(d.pathStr, "\" />  <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />     </svg>     <svg class=\"max\" x=\"").concat(d.xPos, "%\" y=\"").concat(yPos, "%\">  <circle r=\"2.5\" cx=\"0\" cy=\"0\" />  <text y=\"-7\">").concat(d._maxYear, "</text>     </svg>     <div class=\"note\">").concat(NBStr, "</div> </svg>    </li>");
     } else {
       var $li = $target.select(".terms li:nth-child(".concat(_i2 + 1, ")")),
-          $label = $li.select('.label'),
-          $max = $li.select('.max');
+   $label = $li.select('.label'),
+   $max = $li.select('.max');
       $li.attr('class', d.flag);
       $label.style("background", bgStr).html("<h5 title=\"".concat(addRegex(d.data['rx']), "\" data-term=\"").concat(nameClean, "\">").concat(nameDisplay, "</h5><p><a href=\"").concat(url, "\" target=\"_blank\">").concat(total, " mentions</a></p>"));
       $li.select('path').transition().duration(333).attr('d', d.pathStr);
@@ -649,14 +653,14 @@ d3.selectAll('.blockquote-wrapper').each(function () {
       str = "";
   $wrapper.selectAll('[data-term]').each(function () {
     var $node = d3.select(this),
-        term = $node.attr('data-term'),
-        d = getData(term),
-        loc = $node.attr('data-loc'),
-        shiftStr = '',
-        svgStr = '';
+ term = $node.attr('data-term'),
+ d = getData(term),
+ loc = $node.attr('data-loc'),
+ shiftStr = '',
+ svgStr = '';
     $node.classed(d.catStr, true);
-    svgStr = "<svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">\n                            <path d=\"".concat(d.pathStr, "\" />\n                            <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />\n                        </svg>\n                        <svg x=\"").concat(d.xPos, "%\" y=\"0\">\n                            <circle r=\"2.5\" cx=\"0\" cy=\"0\" />\n                            <text y=\"-8\">").concat(d._maxYear, "</text>\n                        </svg>\n                        ");
-    str += "<div class=\"graph solo ".concat(loc, " ").concat(d.catStr, "\" data-name=\"").concat(term, "\">\n                <svg>").concat(svgStr, "</svg>\n                <h5 title=\"").concat(addRegex(d.data['rx']), "\">").concat(term, "</h5>\n                <p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p>\n            </div>");
+    svgStr = "<svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"><path d=\"".concat(d.pathStr, "\" /><path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /> </svg> <svg x=\"").concat(d.xPos, "%\" y=\"0\" ><circle r=\"2.5\" cx=\"0\" cy=\"0\" /><text y=\"-8\">").concat(d._maxYear, "</text></svg>");
+    str += "<div class=\"graph solo ".concat(loc, " ").concat(d.catStr, "\" data-name=\"").concat(term, "\"><svg>").concat(svgStr, "</svg><h5 title=\"").concat(addRegex(d.data['rx']), "\">").concat(term, "</h5><p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
     this.insertAdjacentHTML('afterend', "<svg class=\"".concat(d.catStr, "\">").concat(svgStr, "</svg>"));
   });
   this.innerHTML += str;
@@ -671,14 +675,14 @@ d3.selectAll('.photos div[data-term]').each(function (a, i) {
 
   $dots.html($dots.html() + "<span data-term=\"".concat(term, "\"></span>"));
   $node.attr('data-c', i + 1);
-  str += "<div class=\"graph ".concat(d.catStr, "\">\n                <svg>\n                    <svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">\n                        <path d=\"").concat(d.pathStr, "\" />\n                        <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />\n                    </svg>\n                    <svg x=\"").concat(d.xPos, "%\" y=\"0\">\n                        <circle r=\"2.5\" cx=\"0\" cy=\"0\" />\n                        <text y=\"-8\">").concat(d._maxYear, "</text>\n                    </svg>\n                </svg>\n                <h5 title=\"").concat(addRegex(d.data['rx']), "\"  data-c=\"").concat($node.attr('data-c'), "\">").concat(term, "</h5>\n                <p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p>\n            </div>");
+  str += "<div class=\"graph ".concat(d.catStr, "\"><svg><svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"> <path d=\"").concat(d.pathStr, "\" /> <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /></svg><svg x=\"").concat(d.xPos, "%\" y=\"0\"> <circle r=\"2.5\" cx=\"0\" cy=\"0\" /> <text y=\"-8\">").concat(d._maxYear, "</text>    </svg></svg><h5 title=\"").concat(addRegex(d.data['rx']), "\"  data-c=\"").concat($node.attr('data-c'), "\">").concat(term, "</h5><p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
   this.innerHTML = str;
 });
 d3.selectAll('.by-quote [data-term]').each(function () {
   var $node = d3.select(this),
       term = $node.attr('data-term'),
       d = getData(term),
-      str = "<div class=\"graph ".concat(d.catStr, "\">\n                <svg>\n                    <svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">\n                        <path d=\"").concat(d.pathStr, "\" />\n                        <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />\n                    </svg>\n                    <svg x=\"").concat(d.xPos, "%\" y=\"0\">\n                        <circle r=\"2.5\" cx=\"0\" cy=\"0\" />\n                        <text y=\"-8\">").concat(d._maxYear, "</text>\n                    </svg>\n                </svg>\n                <p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p>\n            </div>");
+      str = "<div class=\"graph ".concat(d.catStr, "\"><svg><svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"> <path d=\"").concat(d.pathStr, "\" /> <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /></svg><svg x=\"").concat(d.xPos, "%\" y=\"0\"> <circle r=\"2.5\" cx=\"0\" cy=\"0\" /> <text y=\"-8\">").concat(d._maxYear, "</text>    </svg></svg><p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
   $node.attr('title', addRegex(d.data['rx']));
   this.parentNode.innerHTML += str;
 }); // can be place or term!
@@ -687,7 +691,7 @@ d3.selectAll('.inline[data-term]').each(function () {
   var $node = d3.select(this),
       term = $node.attr('data-term'),
       d = getData(term),
-      str = "<div class=\"graph ".concat(d.catStr, "\">\n                <svg>\n                    <svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">\n                        <path d=\"").concat(d.pathStr, "\" />\n                        <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />\n                    </svg>\n                    <svg x=\"").concat(d.xPos, "%\" y=\"0\">\n                        <circle r=\"2.5\" cx=\"0\" cy=\"0\" />\n                        <text y=\"-8\">").concat(d._maxYear, "</text>\n                    </svg>\n                </svg>\n                <h5 title=\"").concat(addRegex(d.data['rx']), "\">").concat(term, "</h5>\n                <p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p>\n            </div>");
+      str = "<div class=\"graph ".concat(d.catStr, "\"><svg><svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"> <path d=\"").concat(d.pathStr, "\" /> <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /></svg><svg x=\"").concat(d.xPos, "%\" y=\"0\"> <circle r=\"2.5\" cx=\"0\" cy=\"0\" /> <text y=\"-8\">").concat(d._maxYear, "</text>    </svg></svg><h5 title=\"").concat(addRegex(d.data['rx']), "\">").concat(term, "</h5><p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
   this.innerHTML += str;
 }); // GENDER
 
@@ -711,7 +715,7 @@ function showGender(opt) {
 
   for (var _i3 = 0; _i3 < numYears; _i3++) {
     var she = sheCount[_i3],
-        he = heCount[_i3];
+ he = heCount[_i3];
     genderBreakdown.push(he / (he + she));
   }
 
@@ -782,8 +786,8 @@ $allTownsMax //.attr('x',(maxTowns[1]/numYears)*100+'%')
 function rescaleTowns(k) {
   $towns.each(function () {
     var $node = d3.select(this),
-        currentTransforms = $node.attr('transform'),
-        newTransforms = currentTransforms.replace(/scale\([\d.]+\)/g, '').trim();
+ currentTransforms = $node.attr('transform'),
+ newTransforms = currentTransforms.replace(/scale\([\d.]+\)/g, '').trim();
     $node.attr('transform', "".concat(newTransforms, " scale(").concat(1 / k, ")"));
   });
   d3.select('.state').style('stroke-width', 1 / k);
@@ -810,8 +814,8 @@ function zoomed() {
     k != currentScale
     /*&& k>1*/
     ) {
-        rescaleTowns(k);
-        currentScale = k;
+ rescaleTowns(k);
+ currentScale = k;
       }
 
     if (mapMode == false) {
@@ -951,7 +955,7 @@ d3.selectAll('.inline[data-place]').each(function () {
   var $node = d3.select(this),
       place = $node.attr('data-place'),
       d = getPlaceData(place),
-      str = "<div class=\"graph places\">\n                <svg>\n                    <svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\">\n                        <path d=\"".concat(d.pathStr, "\" />\n                        <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" />\n                    </svg>\n                    <svg x=\"").concat(d.xPos, "%\" y=\"0\">\n                        <circle r=\"2.5\" cx=\"0\" cy=\"0\" />\n                        <text y=\"-8\">").concat(d._maxYear, "</text>\n                    </svg>\n                </svg>\n                <h5>").concat(place, "</h5>\n                <p><a href=\"").concat(getTroveURL(place), "\">").concat(d._total.toLocaleString(), " mentions</a></p>\n            </div>");
+      str = "<div class=\"graph places\"><svg><svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"> <path d=\"".concat(d.pathStr, "\" /> <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /></svg><svg x=\"").concat(d.xPos, "%\" y=\"0\"> <circle r=\"2.5\" cx=\"0\" cy=\"0\" /> <text y=\"-8\">").concat(d._maxYear, "</text>    </svg></svg><h5>").concat(place, "</h5><p><a href=\"").concat(getTroveURL(place), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
   this.innerHTML += str;
 }); // FIX
 
@@ -959,7 +963,7 @@ function showTown(name) {
   var d = getPlaceData(name),
       $label = $selectTowns.select('.label'),
       $max = $selectTowns.select('.max');
-  $label.html("<a href=\"".concat(getTroveURL(name), "\" target=\"_blank\">").concat(d._total.toLocaleString(), " mentions</a>\n                    <span>Avg. rate: ").concat(d._avgRatesPer100k, "/100K</span>"));
+  $label.html("<a href=\"".concat(getTroveURL(name), "\" target=\"_blank\">").concat(d._total.toLocaleString(), " mentions</a>    <span>Avg. rate: ").concat(d._avgRatesPer100k, "/100K</span>"));
   $selectTowns.transition().duration(333).select('path').attr('d', d.pathStr);
   $selectTowns.transition().duration(333).select('path.abs').attr('d', d.pathStrAbs);
   $max.transition().duration(333).attr('x', "".concat(d.xPos, "%"));
@@ -982,7 +986,7 @@ function updateTowns(yearIndex) {
   debouncer = setTimeout(function () {
     $towns.each(function () {
       var $node = d3.select(this),
-          i = $node.attr('data-i') * 1;
+   i = $node.attr('data-i') * 1;
       $node.attr('style', setStyle(i, yearIndex));
     });
   }, 75);
@@ -1023,29 +1027,29 @@ d3.select('#msg a.btn').on('click', function () {
 if (pageId == 'intro') {
   var updateTerm = function updateTerm(opt, term, skipCheck) {
     var data = terms[term],
-        counts = data['n'],
-        catStr = data['c'],
-        ratesPer100k = getRatesPerYear(counts),
-        maxVals = maxMaxIndex(ratesPer100k),
-        _max = maxVals[0],
-        otherOpt = opt == 'a' ? 'b' : 'a'; // CHECK IF MAX
+ counts = data['n'],
+ catStr = data['c'],
+ ratesPer100k = getRatesPerYear(counts),
+ maxVals = maxMaxIndex(ratesPer100k),
+ _max = maxVals[0],
+ otherOpt = opt == 'a' ? 'b' : 'a'; // CHECK IF MAX
 
     if (!skipCheck) {
       maxRatesCompare[opt] = _max;
       var tmpMax = Math.max(maxRatesCompare['a'], maxRatesCompare['b']); // CHECK IF  (UP OR DOWN!)
 
       if (currentMaxRateCompare != tmpMax) {
-        currentMaxRateCompare = tmpMax;
-        updateTerm(otherOpt, d3.select("#compare .".concat(otherOpt, " select")).property("value"), true);
+ currentMaxRateCompare = tmpMax;
+ updateTerm(otherOpt, d3.select("#compare .".concat(otherOpt, " select")).property("value"), true);
       }
     }
 
     var $svg = d3.select("#compare svg.".concat(opt)),
-        _maxIndex = maxVals[1],
-        _maxYear = 1860 + _maxIndex,
-        pathStr = createPath(ratesPer100k, currentMaxRateCompare, 500, 125),
-        xPos = xScale(_maxIndex),
-        yPos = d3.scaleLinear().domain([currentMaxRateCompare, 0]).range([0, 100])(_max);
+ _maxIndex = maxVals[1],
+ _maxYear = 1860 + _maxIndex,
+ pathStr = createPath(ratesPer100k, currentMaxRateCompare, 500, 125),
+ xPos = xScale(_maxIndex),
+ yPos = d3.scaleLinear().domain([currentMaxRateCompare, 0]).range([0, 100])(_max);
 
     d3.select("#compare path.".concat(opt)).transition().duration(333).attr('d', pathStr).attr('data-type', catStr).attr('data-max', _max);
     $svg.transition().duration(333).attr('x', "".concat(xPos, "%")).attr('y', "".concat(yPos, "%"));
@@ -1065,12 +1069,12 @@ if (pageId == 'intro') {
   $dropdownB.html($dropdownA.html());
   $compareDropdowns.on('change', function () {
     var $node = d3.select(this),
-        $parent = d3.select(this.parentNode),
-        opt = $parent.attr('class') == 'a' ? 'a' : 'b',
-        opp = opt == 'a' ? 'b' : 'a',
-        $opp = d3.select("#compare .".concat(opp, " select")),
-        term = this.value,
-        i = this.selectedIndex; // show old in other
+ $parent = d3.select(this.parentNode),
+ opt = $parent.attr('class') == 'a' ? 'a' : 'b',
+ opp = opt == 'a' ? 'b' : 'a',
+ $opp = d3.select("#compare .".concat(opp, " select")),
+ term = this.value,
+ i = this.selectedIndex; // show old in other
 
     $opp.selectAll(".hide").attr('class', ''); // hide current in other
 
@@ -1079,7 +1083,7 @@ if (pageId == 'intro') {
   });
   $compare.classed('ready', true).selectAll('[data-compare]').on('click', function () {
     var $node = d3.select(this),
-        vals = $node.attr('data-compare').split(',');
+ vals = $node.attr('data-compare').split(',');
     setDropdown($dropdownA, vals[0]);
     setDropdown($dropdownB, vals[1]);
   });
