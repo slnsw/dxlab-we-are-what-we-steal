@@ -527,41 +527,6 @@ position:relative;
 display:inline-block}
 
 /*
-h5[data-title]:before,
-h5[data-title]:after {
-position:absolute;
-left:50%;
-bottom:100%;
-opacity:0;
-transition:opacity .5s}
-
-h5[data-title]:before {
-content:"regex: " attr(data-title);
-white-space:nowrap;
-background:#1D1D1d;
-color:#fff;
-font-size:11px;
-letter-spacing:normal;
-padding:4px 5px 6px;
-line-height:1;
-transform:translate(-50%,-8px);
-border-radius:0}
-
-h5[data-title]:after {
-content:'';
-transform:translate(-50%,-4px);
-width:0;
-height:0;
-border-style:solid;
-border-width:6px 6px 0 6px;
-border-color:#1D1D1d transparent transparent transparent}
-
-h5[data-title]:hover:before,
-h5[data-title]:hover:after {
-opacity:1}
-*/
-
-/*
 .flag h5:after {
 content:'*';
 font-size:.66em;
@@ -2149,6 +2114,9 @@ url(../img/icon-notes.png)}
 
     #slider input:focus::-ms-fill-upper {
     background:#ccc}
+
+    .three > div {
+    width:240px}
 	
 }
 
