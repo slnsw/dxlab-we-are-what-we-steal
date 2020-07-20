@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "build": "rsync -avr --exclude='.vercel' --exclude='.git' --exclude='.gitignore' --exclude='package.json' ./ ./we-are-what-we-steal",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
