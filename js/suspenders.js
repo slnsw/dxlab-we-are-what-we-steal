@@ -682,7 +682,7 @@ d3.selectAll('.by-quote [data-term]').each(function () {
   var $node = d3.select(this),
       term = $node.attr('data-term'),
       d = getData(term),
-      str = "<div class=\"graph ".concat(d.catStr, "\"><svg><svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"> <path d=\"").concat(d.pathStr, "\" /> <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /></svg><svg x=\"").concat(d.xPos, "%\" y=\"0\"> <circle r=\"2.5\" cx=\"0\" cy=\"0\" /> <text y=\"-8\">").concat(d._maxYear, "</text>    </svg></svg><p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
+      str = "<div class=\"graph ".concat(d.catStr, "\"><svg><svg viewBox=\"0 0 500 125\" preserveAspectRatio=\"none\"> <path d=\"").concat(d.pathStr, "\" /> <path class=\"abs\" d=\"").concat(d.pathStrAbs, "\" /></svg><svg x=\"").concat(d.xPos, "%\" y=\"0\"> <circle r=\"2.5\" cx=\"0\" cy=\"0\" /> <text y=\"-8\">").concat(d._maxYear, "</text>    </svg></svg><h5 title=\"").concat(addRegex(d.data['rx']), "\">").concat(term, "</h5><p><a href=\"").concat(getTroveURL(term), "\">").concat(d._total.toLocaleString(), " mentions</a></p></div>");
   $node.attr('title', addRegex(d.data['rx']));
   this.parentNode.innerHTML += str;
 }); // can be place or term!
