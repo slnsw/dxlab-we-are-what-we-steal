@@ -1,0 +1,19 @@
+{
+  "name": "dxlab-we-are-what-we-steal",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slnsw/dxlab-we-are-what-we-steal.git"
+  },
+  "author": "Brett Tweedie (https://dragtotrash.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slnsw/dxlab-we-are-what-we-steal/issues"
+  },
+  "homepage": "https://github.com/slnsw/dxlab-we-are-what-we-steal#readme"
+}
