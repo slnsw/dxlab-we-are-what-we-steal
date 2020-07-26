@@ -5,9 +5,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var words = [106226, 287391, 256133, 339379, 353081, 414712, 436334, 381301, 405443, 437375, 346269, 351715, 385033, 434372, 424232, 414808, 455900, 496667, 564945, 570023, 588850, 598293, 609066, 601260, 608376, 447477, 471986, 440611, 442112, 431511, 461641, 505152, 509599, 516403, 494226, 509614, 494874, 495671, 499637, 527974, 530629],
     pop = [338003, 352954, 361731, 371592, 383657, 399368, 418337, 436113, 453294, 471657, 489388, 507348, 525449, 543515, 563408, 583673, 603328, 628067, 656954, 689865, 724904, 759084, 793214, 832401, 877301, 921535, 963693, 999063, 1029449, 1059215, 1093708, 1133223, 1168164, 1194827, 1219126, 1243629, 1263934, 1283977, 1306517, 1328330, 1349760],
     numYears = words.length,
-    totalWords = d3.sum(words),
+    //totalWords = d3.sum(words),
     //absMaxRate = 824, //'gold'
-absMaxRate = 400,
+absMaxRate = 412,
     currentMaxRateCompare = 0,
     maxRatesCompare = {
   'a': 0,
@@ -17,8 +17,9 @@ absMaxRate = 400,
     yScale = d3.scaleLinear().domain([0, absMaxRate]).range([0, 100]),
     troveUrl = 'https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1860-01-01&date.to=1900-12-31&sortBy=dateAsc&l-advtitle=1476&keyword=',
     setNotes = {
-  'gold rush towns': 'based on places mentioned in the libray\'s <a href="https://www.sl.nsw.gov.au/stories/eureka-rush-gold" target="_blank">Eureka! The rush for gold →</a>',
+  'gold rush towns': 'based on places mentioned in the library\'s <a href="https://www.sl.nsw.gov.au/stories/eureka-rush-gold" target="_blank">Eureka! The rush for gold →</a>',
   'a native of': "* based on the gazette format that described people as 'a native of _____'",
+  //'Hotel': "based on the words followed by 'Hotel'",
   'job': '* based on the top jobs following \'working\',\'works\', \'employed\',\'worked\' (the format used by the gazette). e.g. <a href="https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1860-01-01&date.to=1900-12-31&sortBy=dateAsc&l-advtitle=1476&keyword=%22employed%20as%22" target="_blank">employed as →</a>'
 },
     termNotes = {

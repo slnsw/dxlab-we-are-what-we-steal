@@ -67,15 +67,27 @@
 
                     <p>Plus, over four decades, spellings change, as do the terms used, as well as the names of places, so all that's shown here should be taken with a grain of salt (and the ones with fewer mentions even more so). That said, although this approach has its shortcomings, it can be an effective way to provide a quick overview of large datasets, especially for terms that have a higher frequency. For example, below you can see the  popularity of the moustache throughout the 1880s and early 90s, how the town of Gulgong flourished during the gold rush years, and how the cabbagetree hat - one of the first distinctively Australian hats - became less popular over time:</p>
 
+                    <!--
+                    <ul class="key">
+                        <li class="people">People</li>
+                        <li class="places">Places</li>
+                        <li class="things">Things</li>
+                    </ul>
+
+                    <ul class="key">
+                        <li class="peak">Peak year</li>
+                    </ul>
+                    -->
+
                     <div class="inline" data-term="moustache"></div>
 
                     <div class="inline" data-term="Gulgong"></div>
 
                     <div class="inline" data-term="cabbagetree hat"></div>
 
-                    <p>For this project, the terms have been roughly grouped into <a href="./people/">People</a>, <a href="./places/">Places</a>, and <a href="./things/">Things</a>.</p>
+                    <p>For this project, the terms have been loosely grouped into <a href="./people/">People</a> (in pink), <a href="./places/">Places</a> (in green), and <a href="./things/">Things</a> (in purple). Also, in order to best see the changes over time, all graphs are relative, and have been scaled so that the year in which the term appeared at the greatest rate - as shown by the small black dot - has a height of 100%.</p>
 
-                    <p class="sm">* The gazette was printed up until 1930, but this project only looks at the period from 1860 up until federation.<br><br>Note: Most of the photos used in this project are from the library's <a href="https://www.sl.nsw.gov.au/stories/holtermann-collection">Holtermann collection</a>.</p>
+                    <p class="sm">* The gazette was printed up until 1930, but this project only looks at the period from 1860 up until federation. Note: Most of the photos used in this project are from the library's <a href="https://www.sl.nsw.gov.au/stories/holtermann-collection">Holtermann collection</a>.</p>
 
                 </div>
             </div>
@@ -127,12 +139,12 @@
                 </div>
 
                 <div class="b">
+                    
                         <p>The fact that a Panama hat was mentioned, showed that a) it was around at the time and b) valued enough to be either worn or stolen.</p>
                         
                         <div class="inline" data-term="Panama hat"></div>
                         
-                        <p>The same approach was taken with places: it didn't matter whether the crime took place in Dubbo, or the person was originally from Dubbo, or the person was ultimately
-                        sentenced in Dubbo, merely that the 'Dubbo' appeared in the gazette in a given year.</p>
+                        <p>The same approach was taken with places: it didn't matter whether the crime took place in Dubbo, or the person was originally from Dubbo, or the person was ultimately sentenced in Dubbo, merely that the 'Dubbo' appeared in the gazette in a given year.</p>
 
                         <div class="inline" data-term="Dubbo"></div> 
                         
@@ -149,25 +161,21 @@
                 <li class="things">Things</li>
             </ul>
 
-            <ul class="key">
-                <li class="peak">Peak year</li>
-            </ul>
-
             <ul class="by-quote pic centre">
                 <li>
-                    <img src="img/term-tattoo.jpg" alt="">
+                    <img src="img/term-tattoo.jpg" alt="tattoo">
                     <q data-term="tattoo">tattoo</q>
                 </li>
                 <li>
-                    <img src="img/term-Balmain.jpg" alt="">
+                    <img src="img/term-Balmain.jpg" alt="Balmain">
                     <q data-term="Balmain">Balmain</q>
                 </li>
                  <li class="drop">
-                    <img src="img/term-boarding-house.jpg" alt="">
+                    <img src="img/term-boarding-house.jpg" alt="boarding house">
                     <q data-term="boarding-house">boarding house</q>
                 </li>
                 <li class="drop">
-                    <img src="img/term-gold.jpg" alt="">
+                    <img src="img/term-gold.jpg" alt="gold">
                     <q data-term="gold">gold</q>
                 </li>
             </ul>
@@ -624,8 +632,9 @@
 
         <div id="preload"></div>
         
-        <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+        <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+        <script src="../js/d3.js"></script>
         <script src="data/terms.js"></script>
         <script src="data/places.js"></script>
         <script src="js/suspenders.js?1.04"></script>

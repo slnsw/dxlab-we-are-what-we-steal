@@ -2661,7 +2661,7 @@ url(../img/icon-notes.png)}
     left:50%!important;
     right:auto!important;
     bottom:0;
-    text-align:center!important;
+    text-align:center;
     transform:rotate(-2deg) translate(-50%,-8px)!important}
 
     #people header .icon {
@@ -2679,14 +2679,14 @@ url(../img/icon-notes.png)}
     #notes header .icon div {
     transform:rotate(-1deg) translate(-50%,0)!important}
 
+    #notes footer .icon div {
+    transform:rotate(-2deg) translate(-50%,-2px)!important}
+
     .icon div:before {
     content:'('}
 
     .icon div:after {
     content:')'}
-
-    footer .icon div {
-    transform:rotate(2deg) translate(-50%,-5px)}
 
     .by-quote li {
     width:150px}
