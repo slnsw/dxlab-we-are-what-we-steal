@@ -55,11 +55,11 @@
                 <div class="a">
                     <p>Crimes are a reflection of the period and society in which they occur. What happened, the objects and people involved, the location, how it was recorded - or even <em>if</em> it was recorded - all tell us something about the values, attitudes, and power structures of the day.</p>
 
-                    <p>This data visualisation looks at the almost 20 million words that were written in the <em><a href="https://search.sl.nsw.gov.au/primo-explore/fulldisplay?docid=SLNSW_ALMA21143935740002626&context=L&vid=SLNSW">'New South Wales Police Gazette and Weekly Record of Crime'</a></em> from the beginning of 1860 up until the end of 1900* to see what it shows about how the people, places, and things, changed in NSW over that period. But this is not a law-and-order piece, as it's not so much interested in the crimes themselves, but rather the data in aggregate, and what else is documented in the process of recording them. Changing fashions, new technologies, new modes of transport, the establishment of new towns, increasing wealth, all this is recorded in the gazette - along with the racism of the day - as a by-product of reporting the crimes (and other police matters) that occurred. For example, what objects were valued enough (and existed at the time) in order to be stolen? How did people dress, both those committing the (alledged) crimes, and the items of clothing that were stolen? Where did people live? What materials were in use? What modes of transport were used? Crime as a proxy for societal change.</p>
+                    <p>This data visualisation looks at the almost 20 million words that were written in the <em><a href="https://search.sl.nsw.gov.au/primo-explore/fulldisplay?docid=SLNSW_ALMA21143935740002626&context=L&vid=SLNSW">'New South Wales Police Gazette and Weekly Record of Crime'</a></em> from the beginning of 1860 up until the end of 1900* to see what it shows about how the people, places, and things, changed in NSW over that period. But this is not a law-and-order piece, as it's not so much interested in the crimes themselves, but rather the data in aggregate, and what else is documented in the process of recording them. Changing fashions, new technologies, new modes of transport, the establishment of new towns, increasing wealth, all this is recorded in the gazette - along with the racism of the day - as a by-product of reporting the crimes (and other police matters) that occurred. For example, what objects were valued enough (and existed at the time) in order to be stolen? How did people dress, both those committing the (alleged) crimes, and the items of clothing that were stolen? Where did people live? What materials were in use? What modes of transport were used? Crime as a proxy for societal change.</p>
 
                     <h4>Disclaimer</h4>
 
-                    <p>This project merely counts the number of times certain words and phrases appear in the gazette in a given year, so it's obviously a massive oversimplification of what's actually occurring over the period <!--(though it does normalise the count against the total number of words in the gazette that year)-->. On top of that, with few exceptions it doesn’t check for duplicates, typos, nor exclude notices in the gazette that refer to incidents from interstate. Also, given the text used is the result of optical character recognition (OCR), and the original documents themselves are old, there's also - understandably - a number of errors in the original conversion ('G' mistaken for 'C', 'f' for 't', '3' for '8' etc, and vice versa).</p> 
+                    <p>This project merely counts the number of times certain words and phrases appear in the gazette in a given year, so it's obviously a massive oversimplification of what's actually occurring over the period (though it does normalise the count against the total number of words in the gazette that year). On top of that, with few exceptions it doesn’t check for duplicates, typos, nor exclude notices in the gazette that refer to incidents from interstate. Also, given the text used is the result of optical character recognition (OCR), and the original documents themselves are old, there's also - understandably - a number of errors in the original conversion ('G' mistaken for 'C', 'f' for 't', '3' for '8' etc, and vice versa).</p> 
 
                 </div>
 
@@ -67,25 +67,13 @@
 
                     <p>Plus, over four decades, spellings change, as do the terms used, as well as the names of places, so all that's shown here should be taken with a grain of salt (and the ones with fewer mentions even more so). That said, although this approach has its shortcomings, it can be an effective way to provide a quick overview of large datasets, especially for terms that have a higher frequency. For example, below you can see the  popularity of the moustache throughout the 1880s and early 90s, how the town of Gulgong flourished during the gold rush years, and how the cabbagetree hat - one of the first distinctively Australian hats - became less popular over time:</p>
 
-                    <!--
-                    <ul class="key">
-                        <li class="people">People</li>
-                        <li class="places">Places</li>
-                        <li class="things">Things</li>
-                    </ul>
-
-                    <ul class="key">
-                        <li class="peak">Peak year</li>
-                    </ul>
-                    -->
-
                     <div class="inline" data-term="moustache"></div>
 
                     <div class="inline" data-term="Gulgong"></div>
 
                     <div class="inline" data-term="cabbagetree hat"></div>
 
-                    <p>For this project, the terms have been loosely grouped into <a href="./people/">People</a> (in pink), <a href="./places/">Places</a> (in green), and <a href="./things/">Things</a> (in purple). Also, in order to best see the changes over time, all graphs are relative, and have been scaled so that the year in which the term appeared at the greatest rate - as shown by the small black dot - has a height of 100%.</p>
+                    <p>For this project, the terms have been loosely grouped into <a href="./people/">people</a> (in pink), <a href="./places/">places</a> (in green), and <a href="./things/">things</a> (in purple), but it is in no way comprehensive, as the idea was more just to have a bit of a play around, and see what the data might show. Also, in order to best see the changes over time, most of the graphs are relative, and have been scaled so that the year in which the term appeared at the greatest rate - as shown by the small black dot - has the maximum height.</p>
 
                     <p class="sm">* The gazette was printed up until 1930, but this project only looks at the period from 1860 up until federation. Note: Most of the photos used in this project are from the library's <a href="https://www.sl.nsw.gov.au/stories/holtermann-collection">Holtermann collection</a>.</p>
 
@@ -103,8 +91,6 @@
             <ul class="key">
                 <li class="peak">Peak year</li>
             </ul>
-
-
 
             <div class="quote">
              <em>from Issue #32</em>
@@ -208,7 +194,7 @@
                             <path class="pop" d="" />
                             <path class="words" d="" />
                         </svg>
-                        <!-- 492 months... fix!!! -->
+
                         <g class="years" transform="translate(0, 0)">
                             <line x1="25%" y1="-140" x2="25%" y2="100%"/>
                             <line x1="50%" y1="-140" x2="50%" y2="100%"/>
@@ -400,6 +386,7 @@
                             <option value="Chinese">Chinese</option>
                             <option value="cigars">cigars</option>
                             <option value="cigarettes">cigarettes</option>
+                            <option value="Circular Quay">Circular Quay</option>
                             <option value="clean shaved">clean shaved</option>
                             <option value="coffee">coffee</option>
                             <option value="corduroy">corduroy</option>
@@ -425,10 +412,9 @@
                             <option value="Hill End">Hill End</option>
                             <option value="horse">horse</option>
                             <option value="hospital">hospital</option>
-                            <option value="hotel">hotel</option>
                             <option value="Hyde Park">Hyde Park</option>
-                            <option value="Japanned">Japanned</option>
                             <option value="jewellery">jewellery</option>
+                            <option value="lace">lace</option>
                             <option value="Manly Beach">Manly Beach</option>
                             <option value="moleskin">moleskin</option>
                             <option value="monogram">monogram</option>
@@ -517,7 +503,7 @@
                     </div>
                 </div>
 
-                <p class="note">Note: scale is relative to the maximum rate of the two terms.</p>
+                <p class="note">Note: scale is relative to the maximum rate of the two terms</p>
 
             </div>
 
@@ -632,9 +618,8 @@
 
         <div id="preload"></div>
         
-        <!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
-        <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
-        <script src="../js/d3.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="data/terms.js"></script>
         <script src="data/places.js"></script>
         <script src="js/suspenders.js?1.04"></script>

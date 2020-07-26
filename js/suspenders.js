@@ -482,7 +482,7 @@ function showSet(set, category) {
       maxAvgRateForSet = 0,
       $target = d3.select("#set-".concat(category)),
       str = "",
-      filterStr = set == 'tatts (type)' ? 'tattooed' : set,
+      filterStr = set == 'tatts' ? 'tattooed' : set,
       firstTime = $target.attr('data-type') == null ? true : false,
       notes = setNotes[set],
       noteStr = notes != null ? notes : '';
