@@ -1,627 +1,862 @@
 <!DOCTYPE html>
 <html lang="en-AU">
-    <head>
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P62MWFR');</script>
-        <!-- End Google Tag Manager -->
-        
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="twitter:site" content="@statelibrarynsw">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="We Are What We Steal.">
-        <meta name="twitter:description" content="A DX Lab Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the 'New South Wales Police Gazette and Weekly Record of Crime">
-        <meta name="twitter:image:src" content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/img/share-intro.png">
-        <meta property="og:site_name" content="DX Lab | State Library of NSW">
-        <meta property="og:url" content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/">
-        <meta property="og:image" content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/img/share-intro.png">
-        <meta property="og:title" content="We Are What We Steal.">
-        <meta property="og:description" content="A DX Lab Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the 'New South Wales Police Gazette and Weekly Record of Crime'">
-        <title>We Are What We Steal.</title>
-        <link rel="stylesheet" href="css/under-shirt.css?1.05">
-        <link rel="dns-prefetch" href="https://d3js.org/">
-        <link rel="shortcut icon" href="img/icon.png" type="image/png">
-    </head>
-    <body id="intro">
-        <header>
-            
-            <div class="icon">
-                <div>first stolen in <a href="https://trove.nla.gov.au/newspaper/article/252047459?searchTerm=%22binoculars%22">April, 1863</a></div>
-            </div>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P62MWFR');
+    </script>
+    <!-- End Google Tag Manager -->
 
-            <h1>We Are What We Steal.</h1>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="twitter:site" content="@statelibrarynsw" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="We Are What We Steal." />
+    <meta
+      name="twitter:description"
+      content="A DX Lab Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the New South Wales Police Gazette and Weekly Record of Crime"
+    />
+    <meta
+      name="twitter:image:src"
+      content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/img/share-intro.png"
+    />
+    <meta property="og:site_name" content="DX Lab | State Library of NSW" />
+    <meta
+      property="og:url"
+      content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/"
+    />
+    <meta
+      property="og:image"
+      content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/img/share-intro.png"
+    />
+    <meta property="og:title" content="We Are What We Steal." />
+    <meta
+      property="og:description"
+      content="A DX Lab Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the New South Wales Police Gazette and Weekly Record of Crime'"
+    />
+    <title>We Are What We Steal.</title>
+    <link rel="stylesheet" href="css/under-shirt.css?1.05" />
+    <link rel="dns-prefetch" href="https://d3js.org/" />
+    <link rel="shortcut icon" href="img/icon.png" type="image/png" />
+  </head>
+  <body id="intro">
+    <header>
+      <div class="icon">
+        <div>
+          first stolen in
+          <a
+            href="https://trove.nla.gov.au/newspaper/article/252047459?searchTerm=%22binoculars%22"
+            >April, 1863</a
+          >
+        </div>
+      </div>
 
+      <h1>We Are What We Steal.</h1>
+
+      <p>
+        A <a href="https://dxlab.sl.nsw.gov.au/">DX Lab</a> Digital Drop-In
+        experiment looking at some of the changes in NSW from 1860 to 1900
+        through the crimes recorded in the
+        <a
+          href="https://search.sl.nsw.gov.au/primo-explore/fulldisplay?docid=SLNSW_ALMA21143935740002626&context=L&vid=SLNSW"
+          >New South Wales Police Gazette and Weekly Record of Crime</a
+        >
+        held in the State Library of NSW collection.
+      </p>
+
+      <nav>
+        <a href="./">Intro</a>
+        <a href="./people/">People</a>
+        <a href="./places/">Places</a>
+        <a href="./things/">Things</a>
+        <a href="./notes/">Notes</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2 data-count="i">Introduction</h2>
+
+      <div class="cols">
+        <div class="a">
+          <p>
+            Crimes are a reflection of the period and society in which they
+            occur. What happened, the objects and people involved, the location,
+            how it was recorded - or even <em>if</em> it was recorded - all tell
+            us something about the values, attitudes, and power structures of
+            the day.
+          </p>
+
+          <p>
+            This data visualisation looks at the almost 20 million words that
+            were written in the
+            <em
+              ><a
+                href="https://search.sl.nsw.gov.au/primo-explore/fulldisplay?docid=SLNSW_ALMA21143935740002626&context=L&vid=SLNSW"
+                >'New South Wales Police Gazette and Weekly Record of Crime'</a
+              ></em
+            >
+            from the beginning of 1860 up until the end of 1900* to see what it
+            shows about how the people, places, and things, changed in NSW over
+            that period. But this is not a law-and-order piece, as it's not so
+            much interested in the crimes themselves, but rather the data in
+            aggregate, and what else is documented in the process of recording
+            them. Changing fashions, new technologies, new modes of transport,
+            the establishment of new towns, increasing wealth, all this is
+            recorded in the gazette - along with the racism of the day - as a
+            by-product of reporting the crimes (and other police matters) that
+            occurred. For example, what objects were valued enough (and existed
+            at the time) in order to be stolen? How did people dress, both those
+            committing the (alleged) crimes, and the items of clothing that were
+            stolen? Where did people live? What materials were in use? What
+            modes of transport were used? Crime as a proxy for societal change.
+          </p>
+
+          <h4>Disclaimer</h4>
+
+          <p>
+            This project merely counts the number of times certain words and
+            phrases appear in the gazette in a given year, so it's obviously a
+            massive oversimplification of what's actually occurring over the
+            period (though it does normalise the count against the total number
+            of words in the gazette that year). On top of that, with few
+            exceptions it doesn’t check for duplicates, typos, nor exclude
+            notices in the gazette that refer to incidents from interstate.
+            Also, given the text used is the result of optical character
+            recognition (OCR), and the original documents themselves are old,
+            there's also - understandably - a number of errors in the original
+            conversion ('G' mistaken for 'C', 'f' for 't', '3' for '8' etc, and
+            vice versa).
+          </p>
+        </div>
+
+        <div class="b">
+          <p>
+            Plus, over four decades, spellings change, as do the terms used, as
+            well as the names of places, so all that's shown here should be
+            taken with a grain of salt (and the ones with fewer mentions even
+            more so). That said, although this approach has its shortcomings, it
+            can be an effective way to provide a quick overview of large
+            datasets, especially for terms that have a higher frequency. For
+            example, below you can see the popularity of the moustache
+            throughout the 1880s and early 90s, how the town of Gulgong
+            flourished during the gold rush years, and how the cabbagetree hat -
+            one of the first distinctively Australian hats - became less popular
+            over time:
+          </p>
+
+          <div class="inline" data-term="moustache"></div>
+
+          <div class="inline" data-term="Gulgong"></div>
+
+          <div class="inline" data-term="cabbagetree hat"></div>
+
+          <p>
+            For this project, the terms have been loosely grouped into
+            <a href="./people/">people</a> (in pink),
+            <a href="./places/">places</a> (in green), and
+            <a href="./things/">things</a> (in purple), but it is in no way
+            comprehensive, as the idea was more just to have a bit of a play
+            around, and see what the data might show. Also, in order to best see
+            the changes over time, most of the graphs are relative, and have
+            been scaled so that the year in which the term appeared at the
+            greatest rate - as shown by the small black dot - has the maximum
+            height.
+          </p>
+
+          <p class="sm">
+            * The gazette was printed up until 1930, but this project only looks
+            at the period from 1860 up until federation. Note: Most of the
+            photos used in this project are from the library's
+            <a href="https://www.sl.nsw.gov.au/stories/holtermann-collection"
+              >Holtermann collection</a
+            >
+            and their photostream on
+            <a href="https://www.flickr.com/photos/statelibraryofnsw/">flickr</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <br />
+
+      <ul class="key">
+        <li class="people">People</li>
+        <li class="places">Places</li>
+        <li class="things">Things</li>
+      </ul>
+
+      <ul class="key">
+        <li class="peak">Peak year</li>
+      </ul>
+
+      <div class="quote">
+        <em>from Issue #32</em>
+        <div class="blockquote-wrapper">
+          <blockquote>
+            <span data-term="Coonamble" data-loc="TL">Coonamble</span> ...
+            slightly bow-legged; when last seen was wearing black coat and
+            <span data-term="vest" data-loc="TR">vest</span>, tweed trousers,
+            black soft felt hat, low crown; shearer's cook;
+            <span data-term="addicted to drink" data-loc="BR"
+              >addicted to drink</span
+            >, and very quarrelsome
+          </blockquote>
+          <div class="details">
+            <p>Coonamble, July 1899</p>
             <p>
-                A <a href="https://dxlab.sl.nsw.gov.au/">DX Lab</a> Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the <a href="https://search.sl.nsw.gov.au/primo-explore/fulldisplay?docid=SLNSW_ALMA21143935740002626&context=L&vid=SLNSW">'New South Wales Police Gazette and Weekly Record of Crime'</a> held in the State Library of NSW's collection.
+              <a
+                href="https://trove.nla.gov.au/newspaper/article/251626910/27950233"
+              ></a>
             </p>
+          </div>
+        </div>
+      </div>
 
-            <nav>
-                <a href="./">Intro</a>
-                <a href="./people/">People</a>
-                <a href="./places/">Places</a>
-                <a href="./things/">Things</a>
-                <a href="./notes/">Notes</a>
-            </nav>
-            
-        </header>
+      <div class="cols">
+        <div class="a">
+          <h4>About the gazette</h4>
 
-        <main>
-            
-            <h2 data-count="i">Introduction</h2>
+          <p>
+            The gazette was initially called
+            <em>'Reports of Crime, etc., etc., for Police Information'</em> and
+            was bi-weekly, published on Mondays and Thursdays, from 1860 (the
+            earliest digitised issue the library seems to have is #45 from
+            Monday 4th of June, 1860). The first issue under the title
+            <em>'New South Wales Police Gazette and Weekly Record of Crime'</em>
+            was published Wednesday 5th of March, 1862, and was roughly weekly
+            from then on.
+          </p>
 
-            <div class="cols">
-                <div class="a">
-                    <p>Crimes are a reflection of the period and society in which they occur. What happened, the objects and people involved, the location, how it was recorded - or even <em>if</em> it was recorded - all tell us something about the values, attitudes, and power structures of the day.</p>
+          <p>
+            The gazette published a range of information relevant to the NSW
+            police force, such as promotions, police dismissed from the force,
+            released prisoners, deserters, corrections and updates to previous
+            issues, as well as occasional supplements from other government
+            gazettes. But the bulk is to do with the crimes committed and the
+            often evocative descriptions of the (alleged) perpetrator(s) that
+            follow. A typical record of a crime will follow a similar format and
+            note what occurred, the rough time and date (if known), the
+            location, as well as if there was a reward.
+          </p>
 
-                    <p>This data visualisation looks at the almost 20 million words that were written in the <em><a href="https://search.sl.nsw.gov.au/primo-explore/fulldisplay?docid=SLNSW_ALMA21143935740002626&context=L&vid=SLNSW">'New South Wales Police Gazette and Weekly Record of Crime'</a></em> from the beginning of 1860 up until the end of 1900* to see what it shows about how the people, places, and things, changed in NSW over that period. But this is not a law-and-order piece, as it's not so much interested in the crimes themselves, but rather the data in aggregate, and what else is documented in the process of recording them. Changing fashions, new technologies, new modes of transport, the establishment of new towns, increasing wealth, all this is recorded in the gazette - along with the racism of the day - as a by-product of reporting the crimes (and other police matters) that occurred. For example, what objects were valued enough (and existed at the time) in order to be stolen? How did people dress, both those committing the (alleged) crimes, and the items of clothing that were stolen? Where did people live? What materials were in use? What modes of transport were used? Crime as a proxy for societal change.</p>
+          <h4>The general approach</h4>
 
-                    <h4>Disclaimer</h4>
+          <p>
+            The approach was quite simple: count how many times a word or phrase
+            appears in a given year, and see how that changes over time. I
+            didn't look for context, so with few exceptions the code makes no
+            distinction between whether, for example, it was a Panama hat that
+            was stolen, or the Panama hat was worn by the (alleged) suspect.
+          </p>
+        </div>
 
-                    <p>This project merely counts the number of times certain words and phrases appear in the gazette in a given year, so it's obviously a massive oversimplification of what's actually occurring over the period (though it does normalise the count against the total number of words in the gazette that year). On top of that, with few exceptions it doesn’t check for duplicates, typos, nor exclude notices in the gazette that refer to incidents from interstate. Also, given the text used is the result of optical character recognition (OCR), and the original documents themselves are old, there's also - understandably - a number of errors in the original conversion ('G' mistaken for 'C', 'f' for 't', '3' for '8' etc, and vice versa).</p> 
+        <div class="b">
+          <p>
+            The fact that a Panama hat was mentioned, showed that a) it was
+            around at the time and b) valued enough to be either worn or stolen.
+          </p>
 
-                </div>
+          <div class="inline" data-term="Panama hat"></div>
 
-                <div class="b">
+          <p>
+            The same approach was taken with places: it didn't matter whether
+            the crime took place in Dubbo, or the person was originally from
+            Dubbo, or the person was ultimately sentenced in Dubbo, merely that
+            the 'Dubbo' appeared in the gazette in a given year.
+          </p>
 
-                    <p>Plus, over four decades, spellings change, as do the terms used, as well as the names of places, so all that's shown here should be taken with a grain of salt (and the ones with fewer mentions even more so). That said, although this approach has its shortcomings, it can be an effective way to provide a quick overview of large datasets, especially for terms that have a higher frequency. For example, below you can see the  popularity of the moustache throughout the 1880s and early 90s, how the town of Gulgong flourished during the gold rush years, and how the cabbagetree hat - one of the first distinctively Australian hats - became less popular over time:</p>
+          <div class="inline" data-term="Dubbo"></div>
 
-                    <div class="inline" data-term="moustache"></div>
+          <p>
+            All that matters is the fact that the particular word or phrase
+            occurred in a given year. These tallies are then normalised against
+            the total number of words in the gazette for that year, so that
+            words or phrases that appear in years where more crimes and events
+            were recorded (and hence there's more words) aren't given undue
+            weight. The results are then graphed to show the changes over the
+            years.
+          </p>
+        </div>
+      </div>
 
-                    <div class="inline" data-term="Gulgong"></div>
+      <ul class="key">
+        <li class="people">People</li>
+        <li class="places">Places</li>
+        <li class="things">Things</li>
+      </ul>
 
-                    <div class="inline" data-term="cabbagetree hat"></div>
+      <ul class="by-quote pic centre">
+        <li>
+          <img src="img/term-tattoo.jpg" alt="tattoo" />
+          <q data-term="tattoo">tattoo</q>
+        </li>
+        <li>
+          <img src="img/term-Balmain.jpg" alt="Balmain" />
+          <q data-term="Balmain">Balmain</q>
+        </li>
+        <li class="drop">
+          <img src="img/term-boarding-house.jpg" alt="boarding house" />
+          <q data-term="boarding-house">boarding house</q>
+        </li>
+        <li class="drop">
+          <img src="img/term-gold.jpg" alt="gold" />
+          <q data-term="gold">gold</q>
+        </li>
+      </ul>
 
-                    <p>For this project, the terms have been loosely grouped into <a href="./people/">people</a> (in pink), <a href="./places/">places</a> (in green), and <a href="./things/">things</a> (in purple), but it is in no way comprehensive, as the idea was more just to have a bit of a play around, and see what the data might show. Also, in order to best see the changes over time, most of the graphs are relative, and have been scaled so that the year in which the term appeared at the greatest rate - as shown by the small black dot - has the maximum height.</p>
+      <div class="graph-lrg" id="word-count">
+        <h3>
+          No. of words in Gazette<br />
+          <span>vs</span> Population
+        </h3>
 
-                    <p class="sm">* The gazette was printed up until 1930, but this project only looks at the period from 1860 up until federation. Note: Most of the photos used in this project are from the library's <a href="https://www.sl.nsw.gov.au/stories/holtermann-collection">Holtermann collection</a> and their photostream on <a href="https://www.flickr.com/photos/statelibraryofnsw/">flickr</a>.</p>
+        <p>
+          This project uses the words in the gazette as a rough proxy for NSW as
+          a whole (though as you can see, although they both increase roughly in
+          tandem initially, the size of the gazette doesn't correspond to
+          population size overall)
+        </p>
 
-                </div>
+        <ul class="key">
+          <li class="words">Words in Gazette</li>
+          <li class="pop">Population of NSW</li>
+        </ul>
+
+        <div class="wrapper">
+          <div class="decades">
+            <div><h4>1860s</h4></div>
+            <div><h4>1870s</h4></div>
+            <div><h4>1880s</h4></div>
+            <div><h4>1890s</h4></div>
+          </div>
+
+          <svg class="outer">
+            <svg class="inner" viewBox="0 0 500 125" preserveAspectRatio="none">
+              <path class="pop" d="" />
+              <path class="words" d="" />
+            </svg>
+
+            <g class="years" transform="translate(0, 0)">
+              <line x1="25%" y1="-140" x2="25%" y2="100%" />
+              <line x1="50%" y1="-140" x2="50%" y2="100%" />
+              <line x1="75%" y1="-140" x2="75%" y2="100%" />
+            </g>
+
+            <g class="pop" transform="translate(0, 0)">
+              <line x1="0" y1="0%" x2="100%" y2="0%" />
+              <line x1="0" y1="50%" x2="100%" y2="50%" />
+              <text>1M</text>
+              <text y="50%">0.5M</text>
+            </g>
+
+            <svg
+              x="3.5%"
+              y="100%"
+              class="date"
+              data-date="Nov 1860 – Sept 1861"
+            >
+              <line x1="0" y1="0" x2="0" y2="20" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,40)">
+                <text x="0" y="0"><tspan>Lambing Flat Riots</tspan></text>
+                <text x="0" y="15">on NSW goldfields</text>
+                <text x="0" y="30" class="year">(Nov 1860 - Sep 1861)</text>
+              </g>
+            </svg>
+
+            <svg x="5%" y="100%" class="date drop" data-date="1862">
+              <line x1="0" y1="0" x2="0" y2="-65" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(5,-120)">
+                <text x="0" y="0" class="year">(1862)</text>
+                <text x="0" y="15">peak year for</text>
+                <text x="0" y="30">mentions of</text>
+                <text x="0" y="45"><tspan>long beards</tspan></text>
+              </g>
+            </svg>
+
+            <svg x="15%" y="100%" class="date drop" data-date="1866">
+              <line x1="0" y1="0" x2="0" y2="-115" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,-170)">
+                <text x="0" y="0" class="year">(1866)</text>
+                <text x="0" y="15">peak year for</text>
+                <text x="0" y="30">for mentions</text>
+                <text x="0" y="45">
+                  of
+                  <tspan>ponchos</tspan>
+                </text>
+              </g>
+            </svg>
+
+            <svg x="25%" y="100%" class="date drop" data-date="1870">
+              <line x1="0" y1="0" x2="0" y2="40" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,60)">
+                <text x="0" y="0">
+                  Bushranger
+                  <tspan>Captain</tspan>
+                </text>
+                <text x="0" y="15">
+                  <tspan>Thunderbolt</tspan>
+                  killed
+                </text>
+                <text x="0" y="30" class="year">(May 1870)</text>
+              </g>
+            </svg>
+
+            <svg x="32.5%" y="100%" class="date" data-date="Oct 1873">
+              <line x1="0" y1="0" x2="0" y2="-100" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,-155)">
+                <text x="0" y="0" class="year">(1873)</text>
+                <text x="0" y="15">peak year for</text>
+                <text x="0" y="30">mentions of</text>
+                <text x="0" y="45"><tspan>muslin dresses</tspan></text>
+              </g>
+            </svg>
+
+            <svg x="49.5%" y="100%" class="date" data-date="1879">
+              <line x1="0" y1="0" x2="0" y2="60" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,80)">
+                <text x="0" y="0"><tspan>Miles Franklin</tspan></text>
+                <text x="0" y="15">born</text>
+                <text x="0" y="30" class="year">(Oct 1879)</text>
+              </g>
+            </svg>
+
+            <svg x="57%" y="100%" class="date drop-3" data-date="Oct 1881">
+              <line x1="0" y1="0" x2="0" y2="-105" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,-145)">
+                <text x="0" y="0" class="year">(Oct 1881)</text>
+                <text x="0" y="15">first recorded</text>
+                <text x="0" y="30">
+                  theft on a
+                  <tspan>tram</tspan>
+                </text>
+              </g>
+            </svg>
+
+            <svg x="61.5%" y="100%" class="date drop-2" data-date="July 1884">
+              <line x1="0" y1="0" x2="0" y2="20" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,40)">
+                <text x="0" y="0">
+                  first
+                  <tspan>bicycle stolen</tspan>
+                </text>
+                <text x="0" y="15" class="year">(Jul 1884)</text>
+              </g>
+            </svg>
+
+            <svg x="72.5%" y="100%" class="date drop" data-date="Jan 1889">
+              <line x1="0" y1="0" x2="0" y2="70" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,90)">
+                <text x="0" y="0">
+                  Louisa Collins,
+                  <tspan>last woman</tspan>
+                </text>
+                <text x="0" y="15">
+                  <tspan>to hang</tspan>
+                  in NSW
+                </text>
+                <text x="0" y="30" class="year">(Jan 1889)</text>
+              </g>
+            </svg>
+
+            <svg x="74.5%" y="100%" class="date" data-date="Sep 1889">
+              <line x1="0" y1="0" x2="0" y2="-145" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,-185)">
+                <rect x="-60" y="-20" width="120" height="60" />
+                <text x="0" y="0" class="year">(Sep 1889)</text>
+                <text x="0" y="15">last mention of robbery</text>
+                <text x="0" y="30">
+                  by a
+                  <tspan>bushranger</tspan>
+                </text>
+              </g>
+            </svg>
+
+            <svg x="92.5%" y="100%" class="date" data-date="Dec 1897">
+              <line x1="0" y1="0" x2="0" y2="20" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,40)">
+                <text x="0" y="0">first mention of the</text>
+                <text x="0" y="15">
+                  <tspan>motor car</tspan>
+                  in Gazette
+                </text>
+                <text x="0" y="30" class="year">(Dec 1897)</text>
+              </g>
+            </svg>
+
+            <svg x="82.5%" y="100%" class="date drop-3" data-date="Nov 1892">
+              <line x1="0" y1="0" x2="0" y2="-65" />
+              <circle r="4.5" cx="0" cy="0" />
+              <g transform="translate(0,-105)">
+                <text x="0" y="0" class="year">(Nov 1892)</text>
+                <text x="0" y="15">
+                  first
+                  <tspan>Pince-nez</tspan>
+                </text>
+                <text x="0" y="30">stolen</text>
+              </g>
+            </svg>
+          </svg>
+
+          <p class="note">
+            Note: Trove only has issues of the Gazette from June 1860, so the
+            word count for 1860 as a whole is lower, but given I'm using the
+            ratio, rather than the count, I've treated it the same as other
+            years. However, you will see a few cases where 1860 has a spike, and
+            that is probably due to the fact that it doesn't reflect a full year
+            of reporting. Historical population data via the
+            <a
+              href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/3105.0.65.0012006?OpenDocument"
+              >ABS</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="graph-lrg" id="compare">
+        <h3>Compare Terms</h3>
+
+        <p>
+          See how the rate at which an object or term is mentioned changes over
+          the period. e.g:
+          <a data-compare="horse, bicycle">horses vs bicycles</a>, or
+          <a data-compare="whiskers, moustache">whiskers vs moustache</a>, or
+          <a data-compare="diamond, opal">diamonds vs opals</a>, or
+          <a data-compare="cigars, cigarettes">cigars vs cigarettes</a>, or
+          <a data-compare="moleskin, serge">moleskin vs serge</a>, or
+          <a data-compare="public-house, railway station"
+            >public-houses vs railway stations</a
+          >
+          or <a data-compare="drunk, talkative">drunk vs talkative</a>, or
+          <a data-compare="coffee, tea">coffee vs tea</a>, or
+          <a data-compare="California hat, straw hat"
+            >California hats vs straw hats</a
+          >.
+        </p>
+
+        <ul class="key">
+          <li class="people">People</li>
+          <li class="places">Places</li>
+          <li class="things">Things</li>
+        </ul>
+
+        <p class="dropdowns">
+          <span class="a">
+            <select>
+              <option value="Albert chain">Albert chain</option>
+              <option value="ale">ale</option>
+              <option value="alias">alias</option>
+              <option value="Bathurst">Bathurst</option>
+              <option value="beard">beard</option>
+              <option value="beer">beer</option>
+              <option value="bicycle">bicycle</option>
+              <option value="Bondi Beach">Bondi Beach</option>
+              <option value="boots">boots</option>
+              <option value="blacksmith">blacksmith</option>
+              <option value="bushranger">bushranger</option>
+              <option value="cabbagetree hat">cabbagetree hat</option>
+              <option value="calico">calico</option>
+              <option value="California hat">California hat</option>
+              <option value="camera">camera</option>
+              <option value="cap">cap</option>
+              <option value="carriage">carriage</option>
+              <option value="chemise">chemise</option>
+              <option value="Chinese">Chinese</option>
+              <option value="cigars">cigars</option>
+              <option value="cigarettes">cigarettes</option>
+              <option value="Circular Quay">Circular Quay</option>
+              <option value="clean shaved">clean shaved</option>
+              <option value="coffee">coffee</option>
+              <option value="corduroy">corduroy</option>
+              <option value="cotton">cotton</option>
+              <option value="cricket">cricket</option>
+              <option value="The Criterion Hotel">The Criterion Hotel</option>
+              <option value="Darlinghurst Road">Darlinghurst Rd.</option>
+              <option value="diamond">diamonds</option>
+              <option value="diggings">diggings</option>
+              <option value="draught horse">draught horse</option>
+              <option value="drunk">drunk</option>
+              <option value="earrings">earrings</option>
+              <option value="elastic">elastic</option>
+              <option value="felt">felt</option>
+              <option value="flannel">flannel</option>
+              <option value="flannelette">flannelette</option>
+              <option value="filigree">filigree</option>
+              <option value="freckled">freckled</option>
+              <option value="fob chain">fob chain</option>
+              <option value="football">football</option>
+              <option value="goatee">goatees</option>
+              <option value="goldfield">goldfield</option>
+              <option value="Hill End">Hill End</option>
+              <option value="horse">horse</option>
+              <option value="hospital">hospital</option>
+              <option value="Hyde Park">Hyde Park</option>
+              <option value="jewellery">jewellery</option>
+              <option value="lace">lace</option>
+              <option value="Manly Beach">Manly Beach</option>
+              <option value="moleskin">moleskin</option>
+              <option value="monogram">monogram</option>
+              <option value="moustache">moustache</option>
+              <option value="Mudgee">Mudgee</option>
+              <option value="Newtown">Newtown</option>
+              <option value="opal">opal</option>
+              <option value="opium">opium</option>
+              <option value="overcoat">overcoat</option>
+              <option value="Oxford Street">Oxford Street</option>
+              <option value="Panama hat">Panama hat</option>
+              <option value="pawn ticket">pawn ticket</option>
+              <option value="pock-marked">pock-marked</option>
+              <option value="poncho">poncho</option>
+              <option value="portmanteau">portmanteau</option>
+              <option value="public-house">public-house</option>
+              <option value="razor">razor</option>
+              <option value="railway station">railway station</option>
+              <option value="restaurant">restaurant</option>
+              <option value="revolver">revolver</option>
+              <option value="rum">rum</option>
+              <option value="saddle">saddle</option>
+              <option value="serge">serge</option>
+              <option value="shawl">shawl</option>
+              <option value="shoes">shoes</option>
+              <option value="side-levers">side-levers</option>
+              <option value="slouched hat">slouched hat</option>
+              <option value="spirits">spirits</option>
+              <option value="straw hat">straw hat</option>
+              <option value="suit">suit</option>
+              <option value="talkative">talkative</option>
+              <option value="tattoo">tattoo</option>
+              <option value="tea">tea</option>
+              <option value="tent">tent</option>
+              <option value="Ticket-of-Leave">Ticket-of-Leave</option>
+              <option value="tobacco">tobacco</option>
+              <option value="tram">trams</option>
+              <option value="tweed">tweed</option>
+              <option value="twill">twill</option>
+              <option value="Wagga Wagga">Wagga Wagga</option>
+              <option value="whiskers">whiskers</option>
+              <option value="wool">wool</option>
+            </select>
+          </span>
+          vs
+          <span class="b">
+            <select></select>
+          </span>
+        </p>
+
+        <ul class="key">
+          <li class="peak">Peak year</li>
+        </ul>
+
+        <div class="wrapper">
+          <svg class="outer">
+            <g class="years" transform="translate(0, 25)">
+              <line x1="25%" y1="-25" x2="25%" y2="100%" />
+              <line x1="50%" y1="-25" x2="50%" y2="100%" />
+              <line x1="75%" y1="-25" x2="75%" y2="100%" />
+            </g>
+
+            <svg class="inner" viewBox="0 0 500 125" preserveAspectRatio="none">
+              <path class="a" d="" />
+              <path class="b" d="" />
+            </svg>
+
+            <svg class="max a" x="0" y="0">
+              <circle r="2.5" cx="0" cy="0" />
+              <text y="-8"></text>
+              <text y="-20" class="t"></text>
+            </svg>
+
+            <svg class="max b" x="0" y="0">
+              <circle r="2.5" cx="0" cy="0" />
+              <text y="-8"></text>
+              <text y="-20" class="t"></text>
+            </svg>
+          </svg>
+
+          <div class="decades">
+            <div><h4>1860s</h4></div>
+            <div><h4>1870s</h4></div>
+            <div><h4>1880s</h4></div>
+            <div><h4>1890s</h4></div>
+          </div>
+        </div>
+
+        <p class="note">
+          Note: scale is relative to the maximum rate of the two terms
+        </p>
+      </div>
+
+      <ul class="photos">
+        <li>
+          <div class="wrapper">
+            <div class="dots">
+              <img src="img/photos/beach.jpg" alt="" />
             </div>
-
-            <br>
-
-            <ul class="key">
-                <li class="people">People</li>
-                <li class="places">Places</li>
-                <li class="things">Things</li>
-            </ul>
-
-            <ul class="key">
-                <li class="peak">Peak year</li>
-            </ul>
-
-            <div class="quote">
-             <em>from Issue #32</em>
-                <div class="blockquote-wrapper">
-                    <blockquote>
-                        <span data-term="Coonamble" data-loc="TL">Coonamble</span> ... slightly bow-legged; when last seen was wearing black coat and <span data-term="vest" data-loc="TR">vest</span>, tweed trousers, black soft felt hat, low crown; shearer's cook; <span data-term="addicted to drink" data-loc="BR">addicted to drink</span>, and very quarrelsome
-                    </blockquote>
-                    <div class="details">
-                        <p>Coonamble, July 1899</p>
-                        <p><a href="https://trove.nla.gov.au/newspaper/article/251626910/27950233"></a></p>
-                    </div>
-                </div>
+            <div class="details">
+              <p>Woy Woy, circa 1895</p>
+              <p>
+                <a
+                  href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?embedded=true&toolbar=false&dps_pid=IE3425351"
+                ></a>
+              </p>
             </div>
-
-            <div class="cols">
-                <div class="a">
-                    <h4>About the gazette</h4>
-
-                    <p>
-                        The gazette was initially called <em>'Reports of Crime, etc., etc., for Police Information'</em> and was bi-weekly, published on Mondays and Thursdays, from 1860 (the earliest digitised issue the library seems to have is #45 from Monday 4th of June, 1860). The first issue under the title <em>'New South Wales Police Gazette and Weekly Record of Crime'</em> was published Wednesday 5th of March, 1862, and was roughly weekly from then on.
-                    </p>
-
-                    <p>
-                        The gazette published a range of information relevant to the NSW police force, such as promotions, police dismissed from the force, released prisoners, deserters, corrections and updates to previous issues, as well as occasional supplements from other government gazettes. But the bulk is to do with the crimes committed and the often evocative descriptions of the (alleged) perpetrator(s) that follow. A typical record of a crime will follow a similar format and note what occurred, the rough time and date (if known), the location, as well as if there was a reward.
-                    </p>
-
-                    <h4>The general approach</h4>
-
-                    <p>
-                        The approach was quite simple: count how many times a word or phrase appears in a given year, and see how that changes over time. I didn't look for context, so with few exceptions the code makes no distinction between whether, for example, it was a Panama hat that was stolen, or the Panama hat was worn by the (alleged) suspect.
-                    </p> 
-                </div>
-
-                <div class="b">
-                    
-                        <p>The fact that a Panama hat was mentioned, showed that a) it was around at the time and b) valued enough to be either worn or stolen.</p>
-                        
-                        <div class="inline" data-term="Panama hat"></div>
-                        
-                        <p>The same approach was taken with places: it didn't matter whether the crime took place in Dubbo, or the person was originally from Dubbo, or the person was ultimately sentenced in Dubbo, merely that the 'Dubbo' appeared in the gazette in a given year.</p>
-
-                        <div class="inline" data-term="Dubbo"></div> 
-                        
-                        <p>All that matters is the fact that the particular word or phrase occurred in a given year. These tallies are then normalised against the total number of words in the gazette for that year, so that words or phrases that appear in years where more crimes and events were recorded (and hence there's more words) aren't given undue weight. The results are then graphed to show the changes over the years.
-                    </p>
-
-                </div>
+            <div data-term="Woy Woy"></div>
+            <div data-term="black hat"></div>
+            <div data-term="beach" class="lhs"></div>
+            <div data-term="photographer"></div>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper">
+            <div class="dots">
+              <img src="img/photos/waggon.jpg" alt="" />
             </div>
-
-
-            <ul class="key">
-                <li class="people">People</li>
-                <li class="places">Places</li>
-                <li class="things">Things</li>
-            </ul>
-
-            <ul class="by-quote pic centre">
-                <li>
-                    <img src="img/term-tattoo.jpg" alt="tattoo">
-                    <q data-term="tattoo">tattoo</q>
-                </li>
-                <li>
-                    <img src="img/term-Balmain.jpg" alt="Balmain">
-                    <q data-term="Balmain">Balmain</q>
-                </li>
-                 <li class="drop">
-                    <img src="img/term-boarding-house.jpg" alt="boarding house">
-                    <q data-term="boarding-house">boarding house</q>
-                </li>
-                <li class="drop">
-                    <img src="img/term-gold.jpg" alt="gold">
-                    <q data-term="gold">gold</q>
-                </li>
-            </ul>
-
-            <div class="graph-lrg" id="word-count">
-                <h3>
-                    No. of words in Gazette<br>
-                    <span>vs</span> Population
-                </h3>
-
-                <p>
-                    This project uses the words in the gazette as a rough proxy for NSW as a whole (though as you can see, although they both increase roughly in tandem initially, the size of the gazette doesn't correspond to population size overall)
-                </p>
-
-                <ul class="key">
-                    <li class="words">Words in Gazette</li>
-                    <li class="pop">Population of NSW</li>
-                </ul>
-
-                <div class="wrapper">
-                    <div class="decades">
-                        <div><h4>1860s</h4></div>
-                        <div><h4>1870s</h4></div>
-                        <div><h4>1880s</h4></div>
-                        <div><h4>1890s</h4></div>
-                    </div>
-
-                    <svg class="outer">
-                        <svg class="inner" viewBox="0 0 500 125" preserveAspectRatio="none">
-                            <path class="pop" d="" />
-                            <path class="words" d="" />
-                        </svg>
-
-                        <g class="years" transform="translate(0, 0)">
-                            <line x1="25%" y1="-140" x2="25%" y2="100%"/>
-                            <line x1="50%" y1="-140" x2="50%" y2="100%"/>
-                            <line x1="75%" y1="-140" x2="75%" y2="100%"/>
-                        </g>
-
-                        <g class="pop" transform="translate(0, 0)">
-                            <line x1="0" y1="0%" x2="100%" y2="0%"/>
-                            <line x1="0" y1="50%" x2="100%" y2="50%"/>
-                            <text>1M</text>
-                            <text y="50%">0.5M</text>
-                        </g>
-
-                        <svg x="3.5%" y="100%" class="date" data-date="Nov 1860 – Sept 1861">
-                            <line x1="0" y1="0" x2="0" y2="20"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,40)">
-                                <text x="0" y="0"><tspan>Lambing Flat Riots</tspan></text>
-                                <text x="0" y="15">on NSW goldfields</text>
-                                <text x="0" y="30" class="year">(Nov 1860 - Sep 1861)</text>
-                            </g>
-                        </svg>
-
-                        <svg x="5%" y="100%" class="date drop" data-date="1862">
-                            <line x1="0" y1="0" x2="0" y2="-65"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(5,-120)">
-                                <text x="0" y="0" class="year">(1862)</text>
-                                <text x="0" y="15">peak year for</text>
-                                <text x="0" y="30">mentions of</text>
-                                <text x="0" y="45"><tspan>long beards</tspan></text>
-                            </g>
-                        </svg>
-
-                        <svg x="15%" y="100%" class="date drop" data-date="1866">
-                            <line x1="0" y1="0" x2="0" y2="-115"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,-170)">
-                                <text x="0" y="0" class="year">(1866)</text>
-                                <text x="0" y="15">peak year for</text>
-                                <text x="0" y="30">for mentions</text>
-                                <text x="0" y="45">of <tspan>ponchos</tspan></text>
-                            </g>
-                        </svg>
-
-                        <svg x="25%" y="100%" class="date drop" data-date="1870">
-                            <line x1="0" y1="0" x2="0" y2="40"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,60)">
-                                <text x="0" y="0">Bushranger <tspan>Captain</tspan></text>
-                                <text x="0" y="15"><tspan>Thunderbolt</tspan> killed</text>
-                                <text x="0" y="30" class="year">(May 1870)</text>
-                            </g>
-                        </svg>
-
-                        <svg x="32.5%" y="100%" class="date" data-date="Oct 1873">
-                            <line x1="0" y1="0" x2="0" y2="-100"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,-155)">
-                                <text x="0" y="0" class="year">(1873)</text>
-                                <text x="0" y="15">peak year for</text>
-                                <text x="0" y="30">mentions of</text>
-                                <text x="0" y="45"><tspan>muslin dresses</tspan></text>
-                            </g>
-                        </svg>
-
-                        <svg x="49.5%" y="100%" class="date" data-date="1879">
-                            <line x1="0" y1="0" x2="0" y2="60"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,80)">
-                                <text x="0" y="0"><tspan>Miles Franklin</tspan></text>
-                                <text x="0" y="15">born</text>
-                                <text x="0" y="30" class="year">(Oct 1879)</text>
-                            </g>
-                        </svg>
-
-                        <svg x="57%" y="100%" class="date drop-3" data-date="Oct 1881">
-                            <line x1="0" y1="0" x2="0" y2="-105"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,-145)">
-                                <text x="0" y="0" class="year">(Oct 1881)</text>
-                                <text x="0" y="15">first recorded</text>
-                                <text x="0" y="30">theft on a <tspan>tram</tspan></text>
-                            </g>
-                        </svg>
-
-                        <svg x="61.5%" y="100%" class="date drop-2" data-date="July 1884">
-                            <line x1="0" y1="0" x2="0" y2="20"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,40)">
-                                <text x="0" y="0">first <tspan>bicycle stolen</tspan></text>
-                                <text x="0" y="15" class="year">(Jul 1884)</text>
-                            </g>
-                        </svg>
-
-                        <svg x="72.5%" y="100%" class="date drop" data-date="Jan 1889">
-                            <line x1="0" y1="0" x2="0" y2="70"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,90)">
-                                <text x="0" y="0">Louisa Collins, <tspan>last woman</tspan></text>
-                                <text x="0" y="15"><tspan>to hang</tspan> in NSW</text>
-                                <text x="0" y="30" class="year">(Jan 1889)</text>
-                            </g>
-                        </svg>
-
-                        <svg x="74.5%" y="100%" class="date" data-date="Sep 1889">
-                            <line x1="0" y1="0" x2="0" y2="-145"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,-185)">
-                                <rect x="-60" y="-20" width="120" height="60" />
-                                <text x="0" y="0" class="year">(Sep 1889)</text>
-                                <text x="0" y="15">last mention of robbery</text>
-                                <text x="0" y="30">by a <tspan>bushranger</tspan>
-                                </text>
-                            </g>
-                        </svg>
-
-                        <svg x="92.5%" y="100%" class="date" data-date="Dec 1897">
-                            <line x1="0" y1="0" x2="0" y2="20"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,40)">
-                                <text x="0" y="0">first mention of the</text>
-                                <text x="0" y="15"><tspan>motor car</tspan> in Gazette</text>
-                                <text x="0" y="30" class="year">(Dec 1897)</text>
-                            </g>
-                        </svg>
-
-                        <svg x="82.5%" y="100%" class="date drop-3" data-date="Nov 1892">
-                            <line x1="0" y1="0" x2="0" y2="-65"/>
-                            <circle r="4.5" cx="0" cy="0"/>
-                            <g transform="translate(0,-105)">
-                                <text x="0" y="0" class="year">(Nov 1892)</text>
-                                <text x="0" y="15">first <tspan>Pince-nez</tspan></text>
-                                <text x="0" y="30">stolen</text>
-                            </g>
-                        </svg>
-                    </svg>
-
-                    <p class="note">Note: Trove only has issues of the Gazette from June 1860, so the word count for 1860 as a whole is lower, but given I'm using the ratio, rather than the count, I've treated it the same as other years. However, you will see a few cases where 1860 has a spike, and that is probably due to the fact that it doesn't reflect a full year of reporting. Historical population data via the <a href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/3105.0.65.0012006?OpenDocument">ABS</a></p>
-
-                </div>
+            <div class="details">
+              <p>Hill End, circa 1872</p>
+              <p>
+                <a href="https://collection.sl.nsw.gov.au/record/npA2Mol1"></a>
+              </p>
             </div>
-
-
-            <div class="graph-lrg" id="compare">
-
-                <h3>Compare Terms</h3>
-
-                <p>
-                    See how the rate at which an object or term is mentioned changes over the period. e.g: 
-                    <a data-compare="horse, bicycle">horses vs bicycles</a>, or
-                    <a data-compare="whiskers, moustache">whiskers vs moustache</a>, or 
-                    <a data-compare="diamond, opal">diamonds vs opals</a>, or 
-                    <a data-compare="cigars, cigarettes">cigars vs cigarettes</a>, or
-                    <a data-compare="moleskin, serge">moleskin vs serge</a>, or 
-                    <a data-compare="public-house, railway station">public-houses vs railway stations</a> or 
-                    <a data-compare="drunk, talkative">drunk vs talkative</a>, or
-                    <a data-compare="coffee, tea">coffee vs tea</a>, or 
-                    <a data-compare="California hat, straw hat">California hats vs straw hats</a>.
-                </p>
-
-                <ul class="key">
-                    <li class="people">People</li>
-                    <li class="places">Places</li>
-                    <li class="things">Things</li>
-                </ul>
-
-                <p class="dropdowns">
-                    <span class="a">
-                        <select>
-                            <option value="Albert chain">Albert chain</option>
-                            <option value="ale">ale</option>
-                            <option value="alias">alias</option>
-                            <option value="Bathurst">Bathurst</option>
-                            <option value="beard">beard</option>
-                            <option value="beer">beer</option>
-                            <option value="bicycle">bicycle</option>
-                            <option value="Bondi Beach">Bondi Beach</option>
-                            <option value="boots">boots</option>
-                            <option value="blacksmith">blacksmith</option>
-                            <option value="bushranger">bushranger</option>
-                            <option value="cabbagetree hat">cabbagetree hat</option>
-                            <option value="calico">calico</option>
-                            <option value="California hat">California hat</option>
-                            <option value="camera">camera</option>
-                            <option value="cap">cap</option>
-                            <option value="carriage">carriage</option>
-                            <option value="chemise">chemise</option>
-                            <option value="Chinese">Chinese</option>
-                            <option value="cigars">cigars</option>
-                            <option value="cigarettes">cigarettes</option>
-                            <option value="Circular Quay">Circular Quay</option>
-                            <option value="clean shaved">clean shaved</option>
-                            <option value="coffee">coffee</option>
-                            <option value="corduroy">corduroy</option>
-                            <option value="cotton">cotton</option>
-                            <option value="cricket">cricket</option>
-                            <option value="The Criterion Hotel">The Criterion Hotel</option>
-                            <option value="Darlinghurst Road">Darlinghurst Rd.</option>
-                            <option value="diamond">diamonds</option>
-                            <option value="diggings">diggings</option>
-                            <option value="draught horse">draught horse</option>
-                            <option value="drunk">drunk</option>
-                            <option value="earrings">earrings</option>
-                            <option value="elastic">elastic</option>
-                            <option value="felt">felt</option>
-                            <option value="flannel">flannel</option>
-                            <option value="flannelette">flannelette</option>
-                            <option value="filigree">filigree</option>
-                            <option value="freckled">freckled</option>
-                            <option value="fob chain">fob chain</option>
-                            <option value="football">football</option>
-                            <option value="goatee">goatees</option>
-                            <option value="goldfield">goldfield</option>
-                            <option value="Hill End">Hill End</option>
-                            <option value="horse">horse</option>
-                            <option value="hospital">hospital</option>
-                            <option value="Hyde Park">Hyde Park</option>
-                            <option value="jewellery">jewellery</option>
-                            <option value="lace">lace</option>
-                            <option value="Manly Beach">Manly Beach</option>
-                            <option value="moleskin">moleskin</option>
-                            <option value="monogram">monogram</option>
-                            <option value="moustache">moustache</option>
-                            <option value="Mudgee">Mudgee</option>
-                            <option value="Newtown">Newtown</option>
-                            <option value="opal">opal</option>
-                            <option value="opium">opium</option>
-                            <option value="overcoat">overcoat</option>
-                            <option value="Oxford Street">Oxford Street</option>
-                            <option value="Panama hat">Panama hat</option>
-                            <option value="pawn ticket">pawn ticket</option>
-                            <option value="pock-marked">pock-marked</option>
-                            <option value="poncho">poncho</option>
-                            <option value="portmanteau">portmanteau</option>
-                            <option value="public-house">public-house</option>
-                            <option value="razor">razor</option>
-                            <option value="railway station">railway station</option>
-                            <option value="restaurant">restaurant</option>
-                            <option value="revolver">revolver</option>
-                            <option value="rum">rum</option>
-                            <option value="saddle">saddle</option>
-                            <option value="serge">serge</option>
-                            <option value="shawl">shawl</option>
-                            <option value="shoes">shoes</option>
-                            <option value="side-levers">side-levers</option>
-                            <option value="slouched hat">slouched hat</option>
-                            <option value="spirits">spirits</option>
-                            <option value="straw hat">straw hat</option>
-                            <option value="suit">suit</option>
-                            <option value="talkative">talkative</option>
-                            <option value="tattoo">tattoo</option>
-                            <option value="tea">tea</option>
-                            <option value="tent">tent</option>
-                            <option value="Ticket-of-Leave">Ticket-of-Leave</option>
-                            <option value="tobacco">tobacco</option>
-                            <option value="tram">trams</option>
-                            <option value="tweed">tweed</option>
-                            <option value="twill">twill</option>
-                            <option value="Wagga Wagga">Wagga Wagga</option>
-                            <option value="whiskers">whiskers</option>
-                            <option value="wool">wool</option>
-                        </select>
-                    </span>
-                    vs
-                    <span class="b">
-                        <select></select>
-                    </span>
-                </p>
-
-                <ul class="key">
-                    <li class="peak">Peak year</li>
-                </ul>
-
-                <div class="wrapper">
-                    <svg class="outer">
-                        <g class="years" transform="translate(0, 25)">
-                            <line x1="25%" y1="-25" x2="25%" y2="100%"/>
-                            <line x1="50%" y1="-25" x2="50%" y2="100%"/>
-                            <line x1="75%" y1="-25" x2="75%" y2="100%"/>
-                        </g>
-
-                        <svg class="inner" viewBox="0 0 500 125" preserveAspectRatio="none">
-                            <path class="a" d=""/>
-                            <path class="b" d=""/>
-                        </svg>
-
-                        <svg class="max a" x="0" y="0">
-                            <circle r="2.5" cx="0" cy="0"/>
-                            <text y="-8"></text>
-                            <text y="-20" class="t"></text>
-                        </svg>
-
-                        <svg class="max b" x="0" y="0">
-                            <circle r="2.5" cx="0" cy="0"/>
-                            <text y="-8"></text>
-                            <text y="-20" class="t"></text>
-                        </svg>
-                    </svg>
-
-                    <div class="decades">
-                        <div><h4>1860s</h4></div>
-                        <div><h4>1870s</h4></div>
-                        <div><h4>1880s</h4></div>
-                        <div><h4>1890s</h4></div>
-                    </div>
-                </div>
-
-                <p class="note">Note: scale is relative to the maximum rate of the two terms</p>
-
+            <div data-term="waggon"></div>
+            <div data-term="cast in eye" class="lhs"></div>
+            <div data-term="Hill End"></div>
+            <div data-term="waistcoat" class="lhs"></div>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper">
+            <div class="dots">
+              <img src="img/photos/boy.jpg" alt="" />
             </div>
-
-
-            <ul class="photos">
-                <li>
-                    <div class="wrapper">
-                        <div class="dots">
-                            <img src="img/photos/beach.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <p>Woy Woy, circa 1895</p>
-                            <p><a href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?embedded=true&toolbar=false&dps_pid=IE3425351"></a></p>
-                        </div>
-                        <div data-term="Woy Woy"></div>
-                        <div data-term="black hat"></div>
-                        <div data-term="beach" class="lhs"></div>
-                        <div data-term="photographer"></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="wrapper">
-                        <div class="dots">
-                            <img src="img/photos/waggon.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <p>Hill End, circa 1872</p>
-                            <p><a href="https://collection.sl.nsw.gov.au/record/npA2Mol1"></a></p>
-                        </div>
-                        <div data-term="waggon"></div>
-                        <div data-term="cast in eye" class="lhs"></div>
-                        <div data-term="Hill End"></div>
-                        <div data-term="waistcoat" class="lhs"></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="wrapper">
-                        <div class="dots">
-                        <img src="img/photos/boy.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <p>circa 1898</p>
-                            <p><a href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?dps_pid=FL3425330&embedded=true&toolbar=false"></a></p>
-                        </div>
-                        <div data-term="freckled" class="lhs"></div>
-                        <div data-term="striped shirt"></div>
-                        <div data-term="dungaree"></div>
-                    </div>
-                </li>
-            </ul>
-
-
-            <div class="quote">
-                <em>from Issue #44</em>
-                <div class="blockquote-wrapper">
-                    <blockquote>
-                ... [stolen] from the person of William Mackenzie, <span data-term="whilst drunk" data-loc="TR">whilst drunk</span> and asleep in the <span data-term="The Criterion Hotel" data-loc="TL">“Criterion Hotel,”</span> Dubbo,— A gold English patent lever <span data-term="hunting watch" data-loc="BL">hunting watch</span>, full plate, white dial, maker “Walker & Co., London,”
-                </blockquote>
-                    <div class="details">
-                        <p>Dubbo, October 1869</p>
-                        <p><a href="https://trove.nla.gov.au/newspaper/article/252048763"></a></p>
-                    </div>
-                </div>
+            <div class="details">
+              <p>circa 1898</p>
+              <p>
+                <a
+                  href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?dps_pid=FL3425330&embedded=true&toolbar=false"
+                ></a>
+              </p>
             </div>
+            <div data-term="freckled" class="lhs"></div>
+            <div data-term="striped shirt"></div>
+            <div data-term="dungaree"></div>
+          </div>
+        </li>
+      </ul>
 
-
-            <div class="sections">
-                <a href="./people/"><span>people</span></a>
-                <a href="./places/"><span>places</span></a>
-                <a href="./things/"><span>things</span></a>
-            </div>
-
-
-        </main>
-
-        <a href="./people/" class="next">NEXT →</a>
-
-        <footer>
-
-            <nav>
-                <a href="./">Intro</a>
-                <a href="./people/">People</a>
-                <a href="./places/">Places</a>
-                <a href="./things/">Things</a>
-                <a href="./notes/">Notes</a>
-            </nav>
-
+      <div class="quote">
+        <em>from Issue #44</em>
+        <div class="blockquote-wrapper">
+          <blockquote>
+            ... [stolen] from the person of William Mackenzie,
+            <span data-term="whilst drunk" data-loc="TR">whilst drunk</span> and
+            asleep in the
+            <span data-term="The Criterion Hotel" data-loc="TL"
+              >“Criterion Hotel,”</span
+            >
+            Dubbo,— A gold English patent lever
+            <span data-term="hunting watch" data-loc="BL">hunting watch</span>,
+            full plate, white dial, maker “Walker & Co., London,”
+          </blockquote>
+          <div class="details">
+            <p>Dubbo, October 1869</p>
             <p>
-                Thanks to <a href="https://www.sl.nsw.gov.au/">The State Library of NSW</a> and the team at <a href="https://dxlab.sl.nsw.gov.au/">DX Lab</a> for the opportunity to work on this project, and especially
-                <a href="https://twitter.com/paulabray">Paula Bray</a> (also thanks to <a href="https://trove.nla.gov.au/">Trove</a>, an amazing resource...). <span>Project by <a href="https://dragtotrash.com">Brett Tweedie</a></span>
+              <a
+                href="https://trove.nla.gov.au/newspaper/article/252048763"
+              ></a>
             </p>
+          </div>
+        </div>
+      </div>
 
-            <p class="logos">
-                <a href="https://www.sl.nsw.gov.au/"><img src="img/logo-slnsw.png" alt="State Library of NSW"></a>
-                <a href="https://dxlab.sl.nsw.gov.au/"><img src="img/logo-dxlab.png" alt="DX LAB"></a>
-            </p>
+      <div class="sections">
+        <a href="./people/"><span>people</span></a>
+        <a href="./places/"><span>places</span></a>
+        <a href="./things/"><span>things</span></a>
+      </div>
+    </main>
 
-            <p class="req">
-                <a href="https://www.sl.nsw.gov.au/disclaimer">Disclaimer</a> | 
-                <a href="https://www.sl.nsw.gov.au/privacy/web-privacy-statement">Privacy</a> | 
-                <a href="https://www.sl.nsw.gov.au/copyright">Copyright</a> | 
-                <a href="https://www.sl.nsw.gov.au/right-to-information">Right to Information</a>
-            </p>
+    <a href="./people/" class="next">NEXT →</a>
 
-            <div class="icon">
-                <div>first stolen in <a href="https://trove.nla.gov.au/newspaper/article/251901093/27955211?searchTerm=%22type-writer%22">November, 1888</a></div>
-            </div>
+    <footer>
+      <nav>
+        <a href="./">Intro</a>
+        <a href="./people/">People</a>
+        <a href="./places/">Places</a>
+        <a href="./things/">Things</a>
+        <a href="./notes/">Notes</a>
+      </nav>
 
-        </footer>
+      <p>
+        Thanks to
+        <a href="https://www.sl.nsw.gov.au/">The State Library of NSW</a> and
+        the team at <a href="https://dxlab.sl.nsw.gov.au/">DX Lab</a> for the
+        opportunity to work on this project, and especially
+        <a href="https://twitter.com/paulabray">Paula Bray</a> (also thanks to
+        <a href="https://trove.nla.gov.au/">Trove</a>, an amazing resource...).
+        <span
+          >Project by <a href="https://dragtotrash.com">Brett Tweedie</a></span
+        >
+      </p>
 
-        <div id="info"></div>
+      <p class="logos">
+        <a href="https://www.sl.nsw.gov.au/"
+          ><img src="img/logo-slnsw.png" alt="State Library of NSW"
+        /></a>
+        <a href="https://dxlab.sl.nsw.gov.au/"
+          ><img src="img/logo-dxlab.png" alt="DX LAB"
+        /></a>
+      </p>
 
-        <div id="preload"></div>
-        
-        <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="data/terms.js"></script>
-        <script src="data/places.js"></script>
-        <script src="js/suspenders.js?1.04"></script>
-    </body>
+      <p class="req">
+        <a href="https://www.sl.nsw.gov.au/disclaimer">Disclaimer</a> |
+        <a href="https://www.sl.nsw.gov.au/privacy/web-privacy-statement"
+          >Privacy</a
+        >
+        | <a href="https://www.sl.nsw.gov.au/copyright">Copyright</a> |
+        <a href="https://www.sl.nsw.gov.au/right-to-information"
+          >Right to Information</a
+        >
+      </p>
+
+      <div class="icon">
+        <div>
+          first stolen in
+          <a
+            href="https://trove.nla.gov.au/newspaper/article/251901093/27955211?searchTerm=%22type-writer%22"
+            >November, 1888</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <div id="info"></div>
+
+    <div id="preload"></div>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="data/terms.js"></script>
+    <script src="data/places.js"></script>
+    <script src="js/suspenders.js?1.04"></script>
+  </body>
 </html>
