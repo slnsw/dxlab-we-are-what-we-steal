@@ -10,3 +10,7 @@ https://dxlab.sl.nsw.gov.au/blog/we-are-what-we-steal
 
 ### The Conversation Article
 https://theconversation.com/we-are-what-we-steal-the-new-south-wales-police-gazette-and-charting-histories-of-crime-131140
+
+## Updated
+
+2024.06.26
