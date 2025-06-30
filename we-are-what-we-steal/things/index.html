@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P62MWFR');</script>
+        <!-- End Google Tag Manager -->
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="twitter:site" content="@statelibrarynsw">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="We Are What We Steal - Part IV: Things.">
+        <meta name="twitter:description" content="A DX Lab Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the New South Wales Police Gazette and Weekly Record of Crime">
+        <meta name="twitter:image:src" content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/img/share-things.png">
+        <meta property="og:site_name" content="DX Lab | State Library of NSW">
+        <meta property="og:url" content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/things/">
+        <meta property="og:image" content="https://dxlab.sl.nsw.gov.au/we-are-what-we-steal/img/share-things.png">
+        <meta property="og:title" content="We Are What We Steal - Part IV: Things.">
+        <meta property="og:description" content="A DX Lab Digital Drop-In experiment looking at some of the changes in NSW from 1860 to 1900 through the crimes recorded in the New South Wales Police Gazette and Weekly Record of Crime">
+        <title>We Are What We Steal - Things.</title>
+        <link rel="stylesheet" href="../css/under-shirt.css">
+        <link rel="dns-prefetch" href="https://d3js.org/">
+        <link rel="shortcut icon" href="../img/icon.png" type="image/png">
+    </head>
+    <body id="things">
+        <header>
+            <div class="icon">
+                <div>first stolen in <a href="https://trove.nla.gov.au/newspaper/article/251652811?searchTerm=%22bicycle%22">Stanmore, 1884</a></div>
+            </div>
+
+            <h1>We Are What We Steal.</h1>
+
+            <nav>
+                <a href="../">Intro</a>
+                <a href="../people/">People</a>
+                <a href="../places/">Places</a>
+                <a href="../things/">Things</a>
+                <a href="../notes/">Notes</a>
+            </nav>
+
+        </header>
+
+        <main>
+
+            <h2 data-count="iv">Things</h2>
+
+            <div class="cols">
+                <div class="a">
+                    <p>
+                        Not surprisingly, there were many changes in both fashion and technology over the 41 years. Shawls fell out of favour, flannelette replaced flannel, and cuff-links (then known as sleeve links) became more popular. Elastic-side boots (similar to the Blundstones of today) peaked and then declined and jewellery, gems, and watches all became more popular.
+                    </p>
+
+                    <!-- The first bicycle is stolen in 1884, and a few are stolen each year after that, until things really take off around 1897 and one is stolen every few days. -->
+
+                </div>
+
+                <div class="b">
+                    <p>
+                        Bicycles began to appear, cameras become more common, and trams and trains replace horses and bullocks. Much of this is a reflection of NSW's steadily growing wealth, as by the time of federation, Australia was one of the richest nations in the world on a per-capita basis.
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="quote">
+                <em>from Issue #30</em>
+                <div class="blockquote-wrapper">
+                    <blockquote>
+                        ...stout build, full face, repulsive countenance; dressed in coloured <span data-term="moleskin trousers" data-loc="TR">moleskin trousers</span> (striped),
+                        <span data-term="tweed coat" data-loc="BL">tweed coat</span>, light felt hat, and light <span data-term="cotton shirt" data-loc="BR">cotton shirt</span><!--; no boots-->
+                    </blockquote>
+                    <div class="details">
+                        <p>Camden, Jul. 1899</p>
+                        <p><a href="https://trove.nla.gov.au/newspaper/article/251626876"></a></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <ul class="by-quote pic">
+                <li class="drop">
+                    <img src="../img/term-horse.jpg" alt="">
+                    <q data-term="horse">horse</q>
+                </li>
+                <li>
+                    <img src="../img/term-albert-chain.jpg" alt="">
+                    <q data-term="Albert chain">Albert chain</q>
+                </li>
+                <li>
+                    <img src="../img/term-tweed.jpg" alt="">
+                    <q data-term="tweed">tweed</q>
+                </li>
+                <li class="drop">
+                    <img src="../img/term-brooch.jpg" alt="">
+                    <q data-term="brooch">brooch</q>
+                </li>
+            </ul>
+
+            <h3>
+                The Fashions<br>
+                <span>(and transport, tools, & other objects)</span>
+            </h3>
+
+            <p>Select a category to see how they changed over the period (based on the number of times they're mentioned in the gazette by year). Graphs are scaled relative to the first term, which has the highest average rate over the period.</p>
+
+            <p class="notes">Note: some phrases are counted twice. e.g. a 'Scotch twill' shirt is also counted as a 'twill shirt'</p>
+
+            <ul class="key">
+                <li class="peak">Peak year</li>
+            </ul>
+
+            <div class="set things" id="set-things">
+                <div class="opts">
+                    <p>
+                        <span>The</span>
+                        <select data-category="things">
+                            <option value="boots">boots</option>
+                            <option value="clothes">clothes</option>
+                            <option value="coat">coats</option>
+                            <option value="colour">colours</option>
+                            <option value="dress">dresses</option>
+                            <option value="fabric">fabrics</option>
+                            <option value="gems">gems</option>
+                            <option value="jewellery">jewellery</option>
+                            <option value="hat">hats</option>
+                            <option value="jacket">jackets</option>
+                            <option value="livestock">livestock</option>
+                            <option value="metals">metals</option>
+                            <option value="object">accessories</option>
+                            <option value="ring">rings</option>
+                            <option value="shawl">shawls</option>
+                            <option value="shoes">shoes</option>
+                            <option value="shirt">shirts</option>
+                            <option value="suit">suits</option>
+                            <option value="tableware">tableware</option>
+                            <option value="tools">tools</option>
+                            <option value="trousers">trousers</option>
+                            <option value="transport">modes of transport</option>
+                            <option value="watch">watches</option>
+                        </select>
+                        <span>were</span>
+                    </p>
+                    <div id="set-notes"></div>
+                </div>
+
+                <div class="links">
+                    <svg viewBox="0 0 100 550" preserveAspectRatio="none">
+                        <path d="M0,275 C 50,275 0,0 100,0" />
+                        <path d="M0,275 C 50,275 0,50 100,50" />
+                        <path d="M0,275 C 50,275 0,100 100,100" />
+                        <path d="M0,275 C 50,275 0,150 100,150" />
+                        <path d="M0,275 C 50,275 0,200 100,200" />
+                        <path d="M0,275 C 50,275 0,250 100,250" />
+                        <path d="M0,275 C 50,275 0,300 100,300" />
+                        <path d="M0,275 C 50,275 0,350 100,350" />
+                        <path d="M0,275 C 50,275 0,400 100,400" />
+                        <path d="M0,275 C 50,275 0,450 100,450" />
+                        <path d="M0,275 C 50,275 0,500 100,500" />
+                        <path d="M0,275 C 50,275 0,550 100,550" />
+                    </svg>
+                </div>
+
+                <div class="results"></div>
+            </div>
+
+            <ul class="by-quote">
+                <!--
+                ponchos
+                flannelette
+                monogram
+                slippers
+                chronograph
+                carpet bag
+                pee-wee hat
+                filigree
+                snuff-box
+                tent
+                portmanteau
+                -->
+                <li>
+                    <q data-term="pocket handkerchief">pocket handkerchief</q>
+                </li>
+                <li class="drop">
+                    <q data-term="Cobb & Co">Cobb & Co.</q>
+                </li>
+                <li class="drop">
+                    <q data-term="monogram"><b>monogram</b></q>
+                </li>
+                <li>
+                    <q data-term="football">football</q>
+                </li>
+                <li>
+                    <q data-term="tram"><b>tram</b></q>
+                </li>
+            </ul>
+
+
+
+            <ul class="photos">
+                <li>
+                    <div class="wrapper">
+                        <div class="dots">
+                            <img src="../img/photos/well-dressed.jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <p>Hill End, circa 1873</p>
+                            <p><a href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?embedded=true&toolbar=false&dps_pid=IE1235268&_ga=2.208738706.1031196657.1594433487-1880399075.1543467061"></a></p>
+                        </div>
+                        <div data-term="drapery" class="lhs"></div>
+                        <div data-term="check(ed) shirt"></div>
+                        <div data-term="wreath"></div>
+                        <div data-term="umbrella" class="lhs"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <div class="dots">
+                            <img src="../img/photos/pram.jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <p>Gulgong, circa 1873</p>
+                            <p><a href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?dps_pid=FL1248593&embedded=true&toolbar=false"></a></p>
+                        </div>
+                        <div data-term="billycock hat"></div>
+                        <div data-term="dark dress" class="lhs"></div>
+                        <div data-term="perambulator"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <div class="dots">
+                            <img src="../img/photos/penny-farthing.jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <p>West Wyalong, circa 1900</p>
+                            <p><a href="http://digital.sl.nsw.gov.au/delivery/DeliveryManagerServlet?dps_pid=FL1665902&embedded=true&toolbar=false"></a></p>
+                        </div>
+                        <div data-term="bicycle"></div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="quote">
+            <em>from Issue #51</em>
+            <div class="blockquote-wrapper">
+                <blockquote>
+                    ...fair hair, and very light whiskers; dressed in a short <span data-term="blue jacket" data-loc="TL">blue jacket</span> resembling a trooper's, moleskin trousers, <span data-term="Wellington boots" data-loc="TR">Wellington boots</span>, and <span data-term="cabbagetree hat" data-loc="BL">cabbagetree hat</span>, wore <span data-term="spectacles" data-loc="BR">spectacles</span>
+                </blockquote>
+                <div class="details">
+                    <p>Burrowa, Dec. 1863</p>
+                    <p><a href="https://trove.nla.gov.au/newspaper/article/252048120"></a></p>
+                </div>
+            </div>
+        </div>
+
+
+        </main>
+
+        <a href="../notes/" class="next">NEXT →</a>
+
+        <footer>
+
+            <nav>
+                <a href="../">Intro</a>
+                <a href="../people/">People</a>
+                <a href="../places/">Places</a>
+                <a href="../things/">Things</a>
+                <a href="../notes/">Notes</a>
+            </nav>
+
+            <p>Thanks to <a href="https://www.sl.nsw.gov.au/">The State Library of NSW</a> and the team at <a href="https://dxlab.sl.nsw.gov.au/">DX Lab</a> for the opportunity to work on this project, and especially <a href="https://twitter.com/paulabray">Paula Bray</a> (also thanks to <a href="https://trove.nla.gov.au/">Trove</a>, an amazing resource...). <span>Project by <a href="https://dragtotrash.com">Brett Tweedie</a></span></p>
+
+            <p class="logos">
+                <a href="https://www.sl.nsw.gov.au/"><img src="../img/logo-slnsw.png" alt="State Library of NSW"></a>
+                <a href="https://dxlab.sl.nsw.gov.au/"><img src="../img/logo-dxlab.png" alt="DX LAB"></a>
+            </p>
+
+            <p class="req">
+                <a href="https://www.sl.nsw.gov.au/disclaimer">Disclaimer</a> | 
+                <a href="https://www.sl.nsw.gov.au/privacy/web-privacy-statement">Privacy</a> | 
+                <a href="https://www.sl.nsw.gov.au/copyright">Copyright</a> | 
+                <a href="https://www.sl.nsw.gov.au/right-to-information">Right to Information</a>
+            </p>
+
+            <div class="icon">
+                <div>first stolen <a href="https://trove.nla.gov.au/newspaper/article/252045546?searchTerm=%22microscope%22">November, 1860</a></div>
+            </div>
+
+        </footer>
+
+        <div id="info"></div>
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="../data/terms.js"></script>
+        <script src="../data/places.js"></script>
+        <script src="../js/suspenders.js"></script>
+    </body>
+</html>
