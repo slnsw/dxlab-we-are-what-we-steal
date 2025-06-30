@@ -13,4 +13,8 @@ https://theconversation.com/we-are-what-we-steal-the-new-south-wales-police-gaze
 
 ## Updated
 
-2024.06.26
+### 2025.06.30
+
+- Moved into subdirectory to fix pathing
+
+### 2024.06.26
