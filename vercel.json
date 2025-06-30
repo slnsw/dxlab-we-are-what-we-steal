@@ -1,3 +1,7 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/we-are-what-we-steal/:path*", "destination": "/:path*"},
+    { "source": "/we-are-what-we-steal", "destination": "/" }
+  ]
 }
